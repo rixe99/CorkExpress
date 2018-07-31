@@ -67,6 +67,22 @@
                         </select>
                     </div>
                   </div>
+                  <div class="row form-group">
+                        <div class="col col-md-3">
+                            <label for="text-input" class=" form-control-label">Username:</label>
+                        </div>
+                        <div class="col-12 col-md-9">
+                            <input type="text" id="text-input" name="username" placeholder="Username" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                          <div class="col col-md-3">
+                              <label for="text-input" class=" form-control-label">Password:</label>
+                          </div>
+                          <div class="col-12 col-md-9">
+                              <input type="text" id="text-input" name="password" placeholder="Password" class="form-control">
+                          </div>
+                      </div>
           <div class="card-footer">
               <button type="submit" class="btn btn-primary btn-sm">
                   <i class="fa fa-dot-circle-o"></i> Submit
