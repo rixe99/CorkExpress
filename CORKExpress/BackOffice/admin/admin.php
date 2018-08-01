@@ -173,7 +173,7 @@
                                   <a href="?an=1">Inserir</a>
                               </li>
                               <li>
-                                <a href="#">Listar</a>
+                                <a href="?an=2">Listar</a>
                               </li>
                           </ul>
                       </li>
