@@ -22,7 +22,7 @@
                         <td>100398</td>
                         <td>iPhone X 64Gb Grey</td>
                         <td>$999.00</td>
-                        <td>1</td>
+                        <td class="text-right">1</td>
                         <td class="text-right">$999.00</td>
                         <td class="text-right">$999.00</td>
                         <td class="text-right">$999.00</td>
