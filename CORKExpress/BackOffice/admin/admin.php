@@ -53,8 +53,6 @@
                     </div>
                 </div>
             </div>
-
-            
         </header>
         <!-- END HEADER MOBILE-->
 
@@ -86,10 +84,10 @@
                               <i class="fas fa-tachometer-alt"></i>Admin</a>
                           <ul class="list-unstyled navbar__sub-list js-sub-list">
                               <li>
-                                  <a href="">Inserir</a>
+                                  <a href="?an=3">Inserir</a>
                               </li>
                               <li>
-                                <a href="#">Listar</a>
+                                <a href="?an=4">Listar</a>
                               </li>
                           </ul>
                       </li>
