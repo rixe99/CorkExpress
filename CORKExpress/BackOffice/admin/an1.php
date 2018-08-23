@@ -63,7 +63,7 @@
                             <option value="0">Please select</option>
                             <option value="Finanças" <?php if($categoria['categoria']=="Finanças" { echo ' selected="selected"'; } )  ?>>Finanças</option>
                             <option value="Operador" <?php if($categoria['categoria']=="Operador" { echo ' selected="selected"'; } )  ?>>Operador</option>
-                            <option value="I.T" <?php if($categoria['categoria']=="I.T" { echo ' selected="selected"'; } )  ?>>I.T</option>
+                            <option value="I.T" <?php if($categoria['categoria']=="I.T" { echo ' selected="selected"'; } )  ?>>I.A</option>
                         </select>
                     </div>
                   </div>
