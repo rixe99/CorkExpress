@@ -94,10 +94,8 @@
         </form>
         <?php
         include '../connections/conn.php';
-
-          mysqli_query($conn, "INSERT INTO trabalhadores (nome, apelido, nib, niss ,categoria, morada, email, password, username, tipouser ) VALUES ('$_POST[nome]'), '$_POST[apelido]', '$_POST[nib]', '$_POST[niss]','$_POST[categoria]', '$_POST[morada]', '$_POST[email]', '$_POST[password]', '$_POST[username]', '$_POST[0]' ");
-
-          ?>
+           mysqli_query($conn, "INSERT INTO trabalhadores (nome, apelido, nib, niss ,categoria, morada, email, password, username, tipouser ) VALUES ('$_POST[nome]'), '$_POST[apelido]', '$_POST[nib]', '$_POST[niss]','$_POST[categoria]', '$_POST[morada]', '$_POST[email]', '$_POST[password]', '$_POST[username]', '$_POST[0]' ");
+           ?>
       </div>
   </div>
 <center>
