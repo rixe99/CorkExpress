@@ -59,11 +59,11 @@
                         <label for="select" class=" form-control-label">Categoria do trabalhador:</label>
                       </div>
                     <div class="col-12 col-md-9">
-                        <select name="select" id="select" class="form-control">
+                        <select name="categoria" id="select" class="form-control">
                             <option value="0">Please select</option>
-                            <option value="1">Option #1</option>
-                            <option value="2">Option #2</option>
-                            <option value="3">Option #3</option>
+                            <option value="Finanças" <?php if($categoria['categoria']=="Finanças" { echo ' selected="selected"'; } )  ?>>Finanças</option>
+                            <option value="Operador" <?php if($categoria['categoria']=="Operador" { echo ' selected="selected"'; } )  ?>>Operador</option>
+                            <option value="I.T" <?php if($categoria['categoria']=="I.T" { echo ' selected="selected"'; } )  ?>>I.T</option>
                         </select>
                     </div>
                   </div>
@@ -92,6 +92,12 @@
               </button>
           </div>
         </form>
+        <?php
+        include '../connections/conn.php';
+
+          mysqli_query($conn, "INSERT INTO trabalhadores (nome, apelido, nib, niss ,categoria, morada, email, password, username, tipouser ) VALUES ('$_POST[nome]'), '$_POST[apelido]', '$_POST[nib]', '$_POST[niss]','$_POST[categoria]', '$_POST[morada]', '$_POST[email]', '$_POST[password]', '$_POST[username]', '$_POST[0]' ");
+
+          ?>
       </div>
   </div>
 <center>
