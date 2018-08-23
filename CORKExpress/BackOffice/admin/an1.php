@@ -61,9 +61,9 @@
                     <div class="col-12 col-md-9">
                         <select name="categoria" id="select" class="form-control">
                             <option value="0">Please select</option>
-                            <option value="Finanças" <?php if($categoria['categoria']=="Finanças" { echo ' selected="selected"'; } )  ?>>Finanças</option>
-                            <option value="Operador" <?php if($categoria['categoria']=="Operador" { echo ' selected="selected"'; } )  ?>>Operador</option>
-                            <option value="I.T" <?php if($categoria['categoria']=="I.T" { echo ' selected="selected"'; } )  ?>>I.T</option>
+                            <option value="Finanças" <?php if($categoria['categoria']=="Finanças"  )  ?>>Finanças</option>
+                            <option value="Operador" <?php if($categoria['categoria']=="Operador"  )  ?>>Operador</option>
+                            <option value="I.T" <?php if($categoria['categoria']=="I.T"  )  ?>>I.T</option>
                         </select>
                     </div>
                   </div>
@@ -93,9 +93,16 @@
           </div>
         </form>
         <?php
-        include '../connections/conn.php';
-           mysqli_query($conn, "INSERT INTO trabalhadores (nome, apelido, nib, niss ,categoria, morada, email, password, username, tipouser ) VALUES ('$_POST[nome]'), '$_POST[apelido]', '$_POST[nib]', '$_POST[niss]','$_POST[categoria]', '$_POST[morada]', '$_POST[email]', '$_POST[password]', '$_POST[username]', '$_POST[0]' ");
-           ?>
+        if (isset($_POST["insere"])){
+        include '../../connect/conn.php';
+        mysqli_query($conn, "INSERT INTO trabalhadores (nome, apelido, nib, niss ,categoria, morada, email, password, username, tipouser ) VALUES ('$_POST[nome]), '$_POST[apelido]', '$_POST[nib]', '$_POST[niss]','$_POST[categoria]', '$_POST[morada]', '$_POST[email]', '$_POST[password]', '$_POST[username]', 0) ");
+        echo 'sucesso';
+
+        }
+        else {
+          echo 'erro';
+        }
+        ?>
       </div>
   </div>
 <center>
