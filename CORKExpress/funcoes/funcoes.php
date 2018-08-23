@@ -2,13 +2,14 @@
 
 function login($username,$password){
   if(empty($username) || empty($password)){
-    echo '<span class="">Preence os dados Pa!!</
-    span>';
+    echo '<span class="">Insira os dados</span>';
   }
     else{
       include '../connect/conn.php';
 
-      $q = mysqli_query($conn, "SELECT username, password, tipouser, idtrabalhador FROM trabalhadores WHERE username = '$username' AND password = '$password'");
+      $q = mysqli_query($conn, "SELECT username, password, tipouser, idtrabalhador
+        FROM trabalhadores
+         WHERE username = '$username' AND password = '$password'");
       $a = mysqli_fetch_array($q);
 
       if(!$a){
