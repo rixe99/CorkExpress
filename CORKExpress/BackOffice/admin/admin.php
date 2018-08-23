@@ -289,7 +289,6 @@
             <div class="main-content">
                 <div class="section__content section__content--p30">
                   <?php
-
                   @$an = $_REQUEST["an"];
                    switch ($an) {
                      case '1':
@@ -306,10 +305,6 @@
                        break;
                      case '5':
                        include 'an5.php';
-                       break;
-
-                     default:
-
                        break;
                    }
                    ?>
