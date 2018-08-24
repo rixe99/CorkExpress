@@ -102,27 +102,24 @@
             if(!$user && !$pass && !$nib && !$niss ){
               mysqli_query($conn, "INSERT INTO trabalhadores (nome, apelido, nib, niss ,categoria, morada, email, password, username, tipouser ) VALUES ('$_POST[nome]', '$_POST[apelido]', '$_POST[nib]', '$_POST[niss]','$_POST[categoria]', '$_POST[morada]', '$_POST[email]', '$_POST[password]', '$_POST[username]', 0) ");
               echo 'sucesso';
+          }
+
+              else{
+                if($user){
+                  echo 'Ja tem user';
+                }
+                if($pass){
+                  echo'Ja tem pass';
+                }
+                if($nib){
+                  echo'Ja tem nib';
+                }
+                if($niss){
+                  echo 'Ja tem niss';
+                }
+              }
+            }
             include '../../connect/deconn.php';
-          }
-      //    mysqli_query($conn, "INSERT INTO trabalhadores (nome, apelido, nib, niss ,categoria, morada, email, password, username, tipouser ) VALUES ('$_POST[nome]', '$_POST[apelido]', '$_POST[nib]', '$_POST[niss]','$_POST[categoria]', '$_POST[morada]', '$_POST[email]', '$_POST[password]', '$_POST[username]', 0) ");
-      //    echo 'sucesso';
-          else{
-            if($user){
-              echo 'Ja tem user';
-            }
-            if($pass){
-              echo'Ja tem pass';
-            }
-            if($nib){
-              echo'Ja tem nib';
-            }
-            if($niss){
-              echo 'Ja tem niss';
-            }
-          }
-        }
-
-
            ?>
       </div>
   </div>
