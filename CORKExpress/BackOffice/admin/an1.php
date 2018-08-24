@@ -93,6 +93,11 @@
           </div>
         </form>
         <?php
+<<<<<<< HEAD
+        include '../connections/conn.php';
+          mysqli_query($conn, "INSERT INTO trabalhadores (nome, apelido, nib, niss ,categoria, morada, email, password, username, tipouser ) VALUES ('$_POST[nome]'), '$_POST[apelido]', '$_POST[nib]', '$_POST[niss]','$_POST[categoria]', '$_POST[morada]', '$_POST[email]', '$_POST[password]', '$_POST[username]', '$_POST[0]' ");
+          ?>
+=======
         if (isset($_POST["insere"])){
         include '../../connect/conn.php';
         mysqli_query($conn, "INSERT INTO trabalhadores (nome, apelido, nib, niss ,categoria, morada, email, password, username, tipouser ) VALUES ('$_POST[nome]', '$_POST[apelido]', '$_POST[nib]', '$_POST[niss]','$_POST[categoria]', '$_POST[morada]', '$_POST[email]', '$_POST[password]', '$_POST[username]', 0) ");
@@ -104,6 +109,7 @@
         }
 
         ?>
+>>>>>>> b856111f18e0297a3bfedcb593de0567b2b0bf07
       </div>
   </div>
 <center>
