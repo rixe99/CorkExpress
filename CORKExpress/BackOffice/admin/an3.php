@@ -35,11 +35,9 @@
                         <label for="select" class=" form-control-label">Categoria do trabalhador:</label>
                       </div>
                     <div class="col-12 col-md-9">
-                        <select name="select" id="select" class="form-control">
+                        <select name="categoria" id="select" class="form-control">
                             <option value="0">Please select</option>
-                            <option value="1">Option #1</option>
-                            <option value="2">Option #2</option>
-                            <option value="3">Option #3</option>
+                            <option value="1">Administrador</option>
                         </select>
                     </div>
                   </div>
