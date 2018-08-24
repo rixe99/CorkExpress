@@ -17,17 +17,26 @@
                       </tr>
                   </thead>
                   <tbody>
-                      <tr>
-                          <td>2018-09-29 05:57</td>
-                          <td>100398</td>
-                          <td>iPhone X 64Gb Grey</td>
-                          <td>$999.00</td>
-                          <td class="text-right">1</td>
-                          <td class="text-right">$999.00</td>
-                          <td class="text-right">$999.00</td>
-                          <td class="text-right">$999.00</td>
-                          <td class="text-right">$999.00</td>
-                      </tr>
+                    <?php
+                        include '../../connect/conn.php';
+                        $dados = mysqli_fetch_array(mysqli_query($conn,"SELECT nome, apelido, nib, niss ,categoria, morada, email, password, username  FROM trabalhadores "));
+                        if (mysqli_num_rows($dados) > 0){
+
+                          while ($row=mysqli_fetch_assoc($dados)){
+                            echo '<tr>';
+                            echo '<td>'. $row['nome']. '</td>';
+                            echo '<td>'. $row['apelido']. '</td>';
+                            echo '<td>'. $row['morada']. '</td>';
+                            echo '<td>'. $row['email']. '</td>';
+                            echo '<td>'. $row['categoria']. '</td>';
+                            echo '<td>'. $row['nib']. '</td>';
+                            echo '<td>'. $row['niss']. '</td>';
+                            echo '<td>'. $row['usename']. '</td>';
+                            echo '<td>'. $row['password']. '</td>';
+                            echo '</tr>';
+                          }
+                        }
+                    ?>
                   </tbody>
               </table>
           </div>
