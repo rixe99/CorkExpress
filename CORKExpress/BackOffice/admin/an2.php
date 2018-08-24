@@ -19,8 +19,7 @@
                   <tbody>
                     <?php
                         include '../../connect/conn.php';
-                        $dados = mysqli_fetch_array(mysqli_query($conn,"SELECT nome, apelido, nib, niss ,categoria, morada, email, password, username  FROM trabalhadores "));
-                        if (mysqli_num_rows($dados) > 0){
+                        $dados = mysqli_query($conn,"SELECT nome, apelido, nib, niss ,categoria, morada, email, password, username  FROM trabalhadores ");
 
                           while ($row=mysqli_fetch_assoc($dados)){
                             echo '<tr>';
@@ -31,11 +30,11 @@
                             echo '<td>'. $row['categoria']. '</td>';
                             echo '<td>'. $row['nib']. '</td>';
                             echo '<td>'. $row['niss']. '</td>';
-                            echo '<td>'. $row['usename']. '</td>';
+                            echo '<td>'. $row['username']. '</td>';
                             echo '<td>'. $row['password']. '</td>';
                             echo '</tr>';
                           }
-                        }
+
                     ?>
                   </tbody>
               </table>
