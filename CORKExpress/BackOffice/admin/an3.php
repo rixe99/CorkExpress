@@ -37,7 +37,7 @@
                     <div class="col-12 col-md-9">
                         <select name="categoria" id="select" class="form-control">
                             <option value="0">Please select</option>
-                            <option value="1">Administrador</option>
+                            <option value="Administrador" <?php if(isset($_POST['categoria'])){$categoria=$_POST['categoria'];}  ?>>Administrador</option>
                         </select>
                     </div>
                   </div>
@@ -58,7 +58,7 @@
                           </div>
                       </div>
           <div class="card-footer">
-              <button type="submit" class="btn btn-primary btn-sm">
+              <button type="submit" name="insere" class="btn btn-primary btn-sm">
                   <i class="fa fa-dot-circle-o"></i> Submit
               </button>
               <button type="reset" class="btn btn-danger btn-sm">
@@ -66,6 +66,32 @@
               </button>
           </div>
         </form>
+        <?php
+        if(isset($_POST["insere"])){
+          include '../../connect/conn.php';
+          $user=mysqli_fetch_array(mysqli_query($conn,"SELECT username FROM trabalhadores WHERE username='$_POST[username]'" ));
+          $pass=mysqli_fetch_array(mysqli_query($conn,"SELECT password FROM trabalhadores WHERE password='$_POST[password]'" ));
+
+          if(!$user && !$pass ){
+            mysqli_query($conn, "INSERT INTO trabalhadores (nome, apelido, categoria, email, password, username, tipouser ) VALUES ('$_POST[nome]', '$_POST[apelido]','$_POST[categoria]', '$_POST[email]', '$_POST[password]', '$_POST[username]', 1) ");
+            echo 'sucesso';
+          include '../../connect/deconn.php';
+        }
+            else{
+              if($user){
+                echo 'Ja tem user';
+              }
+              if($pass){
+                echo'Ja tem pass';
+              }
+
+            }
+          }
+
+
+
+
+        ?>
       </div>
   </div>
 <center>
