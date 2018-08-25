@@ -1,6 +1,6 @@
 <form class="form-header" action="" method="POST">
       <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
-      <button class="au-btn--submit" type="submit">
+      <button class="au-btn--submit" name="pesque" type="submit">
           <i class="zmdi zmdi-search"></i>
       </button>
 </form>
@@ -17,11 +17,33 @@
                     </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>das</td>
-                    <td>das</td>
-                    <td>1321323</td>
-                  </tr>
+                  <?php
+                  if(isset($_POST["pesque"])){
+                    include '../../connect/conn.php';
+                    $first_letter = substr($_POST['search'], 0, 1);
+                    $nome=mysqli_fetch_array(mysqli_query($conn,"SELECT nome FROM trabalhadores  WHERE LEFT (nome,1)='" . $first_letter . "' "));
+                    $apelido=mysqli_fetch_array(mysqli_query($conn,"SELECT apelido FROM trabalhadores WHERE password='$_POST[search]'" ));
+
+
+                  //  include '../../connect/deconn.php';
+                    if($nome){
+
+                //    include '../../connect/conn.php';
+                      $first_letter = substr($_POST['search'], 0, 1);
+                      $dados =mysqli_query($conn,"SELECT nome, apelido, nib  FROM trabalhadores  WHERE LEFT (nome,1)='" . $first_letter . "' ORDER BY nome")/*)*/;
+
+                        while ($row=mysqli_fetch_assoc($dados)){
+                          echo '<tr>';
+                          echo '<td>'. $row['nome']. '</td>';
+                          echo '<td>'. $row['apelido']. '</td>';
+                          echo '<td>'. $row['nib']. '</td>';
+                          echo '</tr>';
+                        }
+                      }
+                  }
+
+
+                   ?>
                 </tbody>
             </table>
         </div>
