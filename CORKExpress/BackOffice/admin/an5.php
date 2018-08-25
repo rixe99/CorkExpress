@@ -55,10 +55,26 @@
                     <div class="col col-md-3">
                         <label for="text-input" class=" form-control-label">Salario:</label>
                     </div>
-                    <div class="col-12 col-md-9">
+                    <div class="col-12 col-md-6">
                         <input type="number" id="text-input" name="salario" placeholder="Salario" class="form-control">
                     </div>
                 </div>
+                <div class="row form-group">
+                      <div class="col col-md-3">
+                          <label for="text-input" class=" form-control-label">Ano:</label>
+                      </div>
+                      <div class="col-12 col-md-4">
+                          <input type="number" id="text-input" name="ano" placeholder="Ano" class="form-control">
+                      </div>
+                  </div>
+                  <div class="row form-group">
+                        <div class="col col-md-3">
+                            <label for="text-input" class=" form-control-label">Mes:</label>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <input type="number" id="text-input" name="mes" placeholder="Mes" class="form-control">
+                        </div>
+                    </div>
             <div class="row form-group">
                 <div class="col col-md-3">
                     <label for="select" class=" form-control-label">Select</label>
