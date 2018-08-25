@@ -47,7 +47,7 @@
                   <div class="col col-md-3">
                       <label for="text-input" class=" form-control-label">Nib:</label>
                   </div>
-                  <div class="col-12 col-md-9">
+                  <div class="col-12 col-md-6">
                       <input type="number" id="text-input" name="nib" placeholder="Nib" class="form-control">
                   </div>
               </div>
@@ -75,16 +75,24 @@
                             <input type="number" id="text-input" name="mes" placeholder="Mes" class="form-control">
                         </div>
                     </div>
+                  <div class="row form-group">
+                        <div class="col col-md-3">
+                            <label for="text-input" class=" form-control-label">Quantos dias que trabalhou:</label>
+                        </div>
+                        <div class="col-12 col-md-2">
+                            <input type="number" id="text-input" name="dias" placeholder="Dias" class="form-control">
+                          </div>
+                    </div>
             <div class="row form-group">
                 <div class="col col-md-3">
-                    <label for="select" class=" form-control-label">Select</label>
+                    <label for="select" class=" form-control-label">Tipo de pagamento</label>
                 </div>
-                <div class="col-12 col-md-9">
+                <div class="col-12 col-md-6">
                     <select name="select" id="select" class="form-control">
                         <option value="0">Please select</option>
-                        <option value="1">Option #1</option>
-                        <option value="2">Option #2</option>
-                        <option value="3">Option #3</option>
+                        <option value="1">Mensal</option>
+                        <option value="2">Férias</option>
+                        <option value="3">Natal</option>
                     </select>
                 </div>
             </div>
