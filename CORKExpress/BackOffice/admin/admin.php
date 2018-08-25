@@ -68,7 +68,7 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                       <li class="has-sub">
-                          <a class="js-arrow" href="#">
+                          <a class="js-arrow">
                               <i class="fas fa-users"></i>User</a>
                           <ul class="list-unstyled navbar__sub-list js-sub-list">
                               <li>
@@ -92,8 +92,7 @@
                           </ul>
                       </li>
                         <li>
-                            <a href="#">
-                                <i class="fas fa-euro"></i>Salario</a>
+                            <a href="?an=5"><i class="fas fa-euro"></i>Salario</a>
                         </li>
                         <li>
                             <a href="#">
