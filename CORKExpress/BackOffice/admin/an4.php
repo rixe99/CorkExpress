@@ -14,14 +14,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>2018-09-29 05:57</td>
-                        <td>100398</td>
-                        <td>$999.00</td>
-                        <td class="text-right">1</td>
-                        <td class="text-right">$999.00</td>
-                        <td class="text-right">$999.00</td>
-                    </tr>
+                  <?php
+                    include '../../connect/conn.php';
+                    $dados =mysqli_query($conn,"SELECT nome, apelido, categoria, email, password, username  FROM trabalhadores WHERE tipouser=1 ORDER BY nome")/*)*/;
+
+                      while ($row=mysqli_fetch_assoc($dados)){
+                        echo '<tr>';
+                        echo '<td>'. $row['nome']. '</td>';
+                        echo '<td>'. $row['apelido']. '</td>';
+                        echo '<td>'. $row['email']. '</td>';
+                        echo '<td>'. $row['categoria']. '</td>';
+                        echo '<td>'. $row['username']. '</td>';
+                        echo '<td>'. $row['password']. '</td>';
+                        echo '</tr>';
+                      }
+                ?>
                 </tbody>
             </table>
         </div>

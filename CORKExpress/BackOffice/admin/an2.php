@@ -19,7 +19,7 @@
                   <tbody>
                     <?php
                         include '../../connect/conn.php';
-                        $dados = mysqli_query($conn,"SELECT nome, apelido, nib, niss ,categoria, morada, email, password, username  FROM trabalhadores ");
+                        $dados = mysqli_query($conn,"SELECT nome, apelido, nib, niss ,categoria, morada, email, password, username  FROM trabalhadores WHERE tipouser=0 ORDER BY nome ");
 
                           while ($row=mysqli_fetch_assoc($dados)){
                             echo '<tr>';
