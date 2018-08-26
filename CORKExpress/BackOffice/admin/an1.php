@@ -107,8 +107,9 @@
             $pass=mysqli_fetch_array(mysqli_query($conn,"SELECT password FROM trabalhadores WHERE password='$_POST[password]'" ));
             $nib=mysqli_fetch_array(mysqli_query($conn,"SELECT nib FROM trabalhadores WHERE nib='$_POST[nib]'" ));
             $niss=mysqli_fetch_array(mysqli_query($conn,"SELECT niss FROM trabalhadores WHERE niss='$_POST[niss]'" ));
-            if(!$user && !$pass && !$nib && !$niss ){
-              mysqli_query($conn, "INSERT INTO trabalhadores (nome, apelido, nib, niss ,categoria, morada, email, password, username, tipouser ) VALUES ('$_POST[nome]', '$_POST[apelido]', '$_POST[nib]', '$_POST[niss]','$_POST[categoria]', '$_POST[morada]', '$_POST[email]', '$_POST[password]', '$_POST[username]', 0) ");
+            $nif=mysqli_fetch_array(mysqli_query($conn,"SELECT nif FROM trabalhadores WHERE nif='$_POST[nif]'" ));
+            if(!$user && !$pass && !$nib && !$niss && !$nif){
+              mysqli_query($conn, "INSERT INTO trabalhadores (nome, apelido, nif, nib, niss ,categoria, morada, email, password, username, tipouser ) VALUES ('$_POST[nome]', '$_POST[apelido]', '$_POST[nif]', '$_POST[nib]', '$_POST[niss]','$_POST[categoria]', '$_POST[morada]', '$_POST[email]', '$_POST[password]', '$_POST[username]', 0) ");
               echo 'sucesso';
             include '../../connect/deconn.php';
           }
@@ -124,6 +125,9 @@
                 }
                 if($niss){
                   echo 'Ja tem niss';
+                }
+                if($nisf){
+                  echo 'Ja tem nif';
                 }
               }
             }

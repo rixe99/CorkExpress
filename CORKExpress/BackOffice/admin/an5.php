@@ -30,13 +30,13 @@
 
                 //    include '../../connect/conn.php';
                       $first_letter = substr($_POST['search'], 0, 1);
-                      $dados =mysqli_query($conn,"SELECT nome, apelido, nib  FROM trabalhadores  WHERE LEFT (nome,1)='" . $first_letter . "' ORDER BY nome")/*)*/;
+                      $dados =mysqli_query($conn,"SELECT nome, apelido, nif  FROM trabalhadores  WHERE LEFT (nome,1)='" . $first_letter . "' ORDER BY nome")/*)*/;
 
                         while ($row=mysqli_fetch_assoc($dados)){
                           echo '<tr>';
                           echo '<td>'. $row['nome']. '</td>';
                           echo '<td>'. $row['apelido']. '</td>';
-                          echo '<td>'. $row['nib']. '</td>';
+                          echo '<td>'. $row['nif']. '</td>';
                           echo '</tr>';
                         }
                       }
@@ -66,10 +66,10 @@
             </div>
             <div class="row form-group">
                   <div class="col col-md-3">
-                      <label for="text-input" class=" form-control-label">Nib:</label>
+                      <label for="text-input" class=" form-control-label">Nif:</label>
                   </div>
                   <div class="col-12 col-md-6">
-                      <input type="number" id="text-input" name="nib" placeholder="Nib" class="form-control">
+                      <input type="number" id="text-input" name="nif" placeholder="Nif" class="form-control">
                   </div>
               </div>
               <div class="row form-group">
@@ -109,11 +109,11 @@
                     <label for="select" class=" form-control-label">Tipo de pagamento</label>
                 </div>
                 <div class="col-12 col-md-6">
-                    <select name="select" id="select" class="form-control">
+                    <select name="tipo" id="select" class="form-control">
                         <option value="0">Please select</option>
-                        <option value="1">Mensal</option>
-                        <option value="2">Férias</option>
-                        <option value="3">Natal</option>
+                        <option value="Mensal" <?php if(isset($_POST['tipo'])){$tipo=$_POST['tipo'];}  ?>>Mensal</option>
+                        <option value="Férias" <?php if(isset($_POST['tipo'])){$tipo=$_POST['tipo'];}  ?>>Férias</option>
+                        <option value="Natal" <?php if(isset($_POST['tipo'])){$tipo=$_POST['tipo'];}  ?>>Natal</option>
                     </select>
                 </div>
             </div>
@@ -122,15 +122,15 @@
                     <label for="select" class=" form-control-label">Turno</label>
                 </div>
                 <div class="col-12 col-md-6">
-                    <select name="select" id="select" class="form-control">
+                    <select name="turno" id="select" class="form-control">
                         <option value="0">Please select</option>
-                        <option value="1">Manhã</option>
-                        <option value="2">Noite</option>
+                        <option value="Manhã" <?php if(isset($_POST['turno'])){$turno=$_POST['turno'];}  ?>>Manhã</option>
+                        <option value="Noite" <?php if(isset($_POST['turno'])){$turno=$_POST['turno'];}  ?>>Noite</option>
                     </select>
                 </div>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary btn-sm">
+                <button type="submit" name="insere" class="btn btn-primary btn-sm">
                     <i class="fa fa-dot-circle-o"></i> Submit
                 </button>
                 <button type="reset" class="btn btn-danger btn-sm">
@@ -138,5 +138,24 @@
                 </button>
             </div>
         </form>
+        <?php
+        if(isset($_POST["insere"])){
+          echo "ola";
+          include '../../connect/conn.php';
+          $nif=mysqli_query($conn,"SELECT nif FROM trabalhadores WHERE nif=$_POST[nif]");
+          echo "salario";
+          if ($nif){
+            if($_POST['salario']<=550){
+              echo "salario2";
+              $ss=($_POST['salario']*0.11);
+            //  $ssdesconto=($_POST['salario']-$ss);
+              $irs=($_POST['salario']*0.08);
+            //  $irsdesconto=($_POST['salario']-$irs);
+              $salariofinal=($_POST['salario']-$ss-$irsd);
+              mysqli_query($conn, "INSERT INTO salario (nif, ano, mes, dias, salariobruto ,salarioniss, salarioirs, salariofinal, tipo, turno ) VALUES ('$_POST[nif]', '$_POST[ano]', '$_POST[mes]', '$_POST[dias]', '$_POST[salario]','$ss', '$irs', '$salariofinal', '$_POST[tipo]',  'Noite') ");
+            }
+          }
+        }
+         ?>
     </div>
 </div>
