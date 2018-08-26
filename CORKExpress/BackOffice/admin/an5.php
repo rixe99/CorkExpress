@@ -147,8 +147,13 @@
           if ($nif){
 
             if($_POST['tipo']=="Mensal"){
-                $verimes=mysqli_query($conn,"SELECT nif, ano, mes, tipo FROM salario  WHERE nif=$_POST[nif] AND ano=$_POST[ano] AND mes=$_POST[mes] AND tipo=$_POST[tipo] ");
-              if ($verimes){
+                $verimes=mysqli_query($conn,"SELECT nif, ano, mes, tipo FROM salario  WHERE nif=$_POST[nif] AND ano=$_POST[ano] AND mes=$_POST[mes] AND tipo='Mensal'");
+                if (!$verimes) {
+                  printf("Error: %s\n", mysqli_error($conn));
+                  exit();
+                }
+                $resultcheck = mysqli_fetch_array($verimes);
+              if (!$resultcheck){
                 if($_POST['salario']<=550){
                   echo "salario2";
                   $ss=($_POST['salario']*0.11);
@@ -161,9 +166,7 @@
                 echo "Erro";
               }
             }
-            else {
-              echo "Erro mes";
-            }
+          
           }
         }
          ?>
