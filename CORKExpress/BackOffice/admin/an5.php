@@ -159,14 +159,14 @@
                   $ss=($_POST['salario']*0.11);
                   $irs=($_POST['salario']*0.08);
                   $salariofinal=($_POST['salario']-$ss-$irs);
-                  mysqli_query($conn, "INSERT INTO salario (nif, ano, mes, dias, salariobruto ,salarioniss, salarioirs, salariofinal, tipo, turno ) VALUES ('$_POST[nif]', '$_POST[ano]', '$_POST[mes]', '$_POST[dias]', '$_POST[salario]','$ss', '$irs', '$salariofinal', '$_POST[tipo]',  'Noite') ");
+                  mysqli_query($conn, "INSERT INTO salario (nif, ano, mes, dias, salariobruto ,salarioniss, salarioirs, salariofinal, tipo, turno ) VALUES ('$_POST[nif]', '$_POST[ano]', '$_POST[mes]', '$_POST[dias]', '$_POST[salario]','$ss', '$irs', '$salariofinal', '$_POST[tipo]',  '$_POST[turno]') ");
                 }
               }
               else {
                 echo "Erro";
               }
             }
-          
+
           }
         }
          ?>
