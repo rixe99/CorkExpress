@@ -11,6 +11,7 @@
                           <th>Email</th>
                           <th>Categoria</th>
                           <th class="text-right">NiB</th>
+                          <th class="text-right">NiF</th>
                           <th class="text-right">Niss</th>
                           <th class="text-right">Username</th>
                           <th class="text-right">Password</th>

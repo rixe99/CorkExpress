@@ -54,6 +54,14 @@
                             <input type="number" id="text-input" name="nib" placeholder="Nib" class="form-control">
                         </div>
                     </div>
+                    <div class="row form-group">
+                          <div class="col col-md-3">
+                              <label for="text-input" class=" form-control-label">Nif:</label>
+                          </div>
+                          <div class="col-12 col-md-9">
+                              <input type="number" id="text-input" name="nif" placeholder="Nif" class="form-control">
+                          </div>
+                      </div>
                   <div class="row form-group">
                       <div class="col col-md-3">
                         <label for="select" class=" form-control-label">Categoria do trabalhador:</label>
