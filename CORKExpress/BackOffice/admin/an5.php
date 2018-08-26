@@ -117,6 +117,18 @@
                     </select>
                 </div>
             </div>
+            <div class="row form-group">
+                <div class="col col-md-3">
+                    <label for="select" class=" form-control-label">Turno</label>
+                </div>
+                <div class="col-12 col-md-6">
+                    <select name="select" id="select" class="form-control">
+                        <option value="0">Please select</option>
+                        <option value="1">Manhã</option>
+                        <option value="2">Noite</option>
+                    </select>
+                </div>
+            </div>
         </form>
     </div>
     <div class="card-footer">
