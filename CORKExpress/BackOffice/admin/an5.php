@@ -13,7 +13,7 @@
                     <tr>
                         <th>Nome</th>
                         <th>Apelido</th>
-                        <th class="text-right">NiB</th>
+                        <th class="text-right">Nif</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -151,7 +151,7 @@
             //  $ssdesconto=($_POST['salario']-$ss);
               $irs=($_POST['salario']*0.08);
             //  $irsdesconto=($_POST['salario']-$irs);
-              $salariofinal=($_POST['salario']-$ss-$irsd);
+              $salariofinal=($_POST['salario']-$ss-$irs);
               mysqli_query($conn, "INSERT INTO salario (nif, ano, mes, dias, salariobruto ,salarioniss, salarioirs, salariofinal, tipo, turno ) VALUES ('$_POST[nif]', '$_POST[ano]', '$_POST[mes]', '$_POST[dias]', '$_POST[salario]','$ss', '$irs', '$salariofinal', '$_POST[tipo]',  'Noite') ");
             }
           }
