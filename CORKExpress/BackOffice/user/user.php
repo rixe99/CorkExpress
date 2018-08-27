@@ -1,3 +1,9 @@
+<?php
+require_once '../../funcoes/funcoes.php';
+session_start();
+validar();
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -213,7 +219,7 @@
                                             <img src="images/icon/avatar-01.jpg" alt="John Doe" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">john doe</a>
+                                            <a class="js-acc-btn" href="#" <?php   include '../../connect/conn.php'; $dados =mysqli_query($conn,"SELECT nome, apelido FROM trabalhadores  WHERE idtrabalhador=$_SESSION[idtrabalhador] "); $row=mysqli_fetch_assoc($dados);  echo '<span>'.$row['nome'].$row['apelido']. '</span>';  ?>></a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
@@ -224,7 +230,7 @@
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">john doe</a>
+                                                        <a href="#" <?php   include '../../connect/conn.php'; $dados =mysqli_query($conn,"SELECT nome, apelido FROM trabalhadores  WHERE idtrabalhador=$_SESSION[idtrabalhador] "); $row=mysqli_fetch_assoc($dados);  echo '<span>'.$row['nome'] . $row['apelido']. '</span>';  ?>></a>
                                                     </h5>
                                                     <span class="email">johndoe@example.com</span>
                                                 </div>
@@ -244,7 +250,7 @@
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
+                                                <a href="fecharsessao.php">
                                                     <i class="zmdi zmdi-power"></i>Logout</a>
                                             </div>
                                         </div>

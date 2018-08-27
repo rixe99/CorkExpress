@@ -33,4 +33,11 @@ function login($username,$password){
       include '../connect/deconn.php';
     }
   }
+
+
+  function validar(){
+    if(!$_SESSION["idtrabalhador"]){
+      echo '<meta http-equiv="refresh" content="0;url=Login.php">';
+    }
+  }
  ?>
