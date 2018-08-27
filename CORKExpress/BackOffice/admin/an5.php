@@ -147,28 +147,82 @@
           if ($nif){
 
             if($_POST['tipo']=="Mensal"){
-                $verimes=mysqli_query($conn,"SELECT nif, ano, mes, tipo FROM salario  WHERE nif=$_POST[nif] AND ano=$_POST[ano] AND mes=$_POST[mes] AND tipo='Mensal'");
-                if (!$verimes) {
-                  printf("Error: %s\n", mysqli_error($conn));
-                  exit();
+              $verimes=mysqli_query($conn,"SELECT nif, ano, mes, tipo FROM salario  WHERE nif=$_POST[nif] AND ano=$_POST[ano] AND mes=$_POST[mes] AND tipo='Mensal'");
+              if (!$verimes) {
+                printf("Error: %s\n", mysqli_error($conn));
+                exit();
+              }
+              $resultcheck = mysqli_fetch_array($verimes);
+            if (!$resultcheck){
+              if($_POST['salario']<=550){
+                $ss=($_POST['salario']*0.11);
+                $irs=($_POST['salario']*0.08);
+                $salariofinal=($_POST['salario']-$ss-$irs);
+                if($_POST['turno']=="Manhã"){
+                  echo "manha";
+                  $bonusmanha=($salariofinal*0.01);
+                  $salarioliquido=($salariofinal+$bonusmanha);
+                  mysqli_query($conn, "INSERT INTO salario (nif, ano, mes, dias, salariobruto ,salarioniss, salarioirs, salariofinal, tipo, turno ) VALUES ('$_POST[nif]', '$_POST[ano]', '$_POST[mes]', '$_POST[dias]', '$_POST[salario]','$ss', '$irs', '$salarioliquido', '$_POST[tipo]',  '$_POST[turno]') ");
                 }
-                $resultcheck = mysqli_fetch_array($verimes);
-              if (!$resultcheck){
-                if($_POST['salario']<=550){
-                  echo "salario2";
-                  $ss=($_POST['salario']*0.11);
-                  $irs=($_POST['salario']*0.08);
-                  $salariofinal=($_POST['salario']-$ss-$irs);
-                  mysqli_query($conn, "INSERT INTO salario (nif, ano, mes, dias, salariobruto ,salarioniss, salarioirs, salariofinal, tipo, turno ) VALUES ('$_POST[nif]', '$_POST[ano]', '$_POST[mes]', '$_POST[dias]', '$_POST[salario]','$ss', '$irs', '$salariofinal', '$_POST[tipo]',  '$_POST[turno]') ");
+                elseif ($_POST['turno']=="Noite") {
+                  echo "noite";
+                  $bonusnoite=($salariofinal*0.03);
+                  $salarioliquido=($salariofinal+$bonusnoite);
+                  mysqli_query($conn, "INSERT INTO salario (nif, ano, mes, dias, salariobruto ,salarioniss, salarioirs, salariofinal, tipo, turno ) VALUES ('$_POST[nif]', '$_POST[ano]', '$_POST[mes]', '$_POST[dias]', '$_POST[salario]','$ss', '$irs', '$salarioliquido', '$_POST[tipo]',  '$_POST[turno]') ");
                 }
               }
-              else {
-                echo "Erro";
+              //Ordenados ate 551 a 1099
+            }
+            else {
+              echo "Erro mes ja contabilizado";
+            }
+          }
+          //FERIAS
+          if($_POST['tipo']=="Férias"){
+              $veriferias=mysqli_query($conn,"SELECT nif, ano, tipo FROM salario  WHERE ano=$_POST[ano] AND nif=$_POST[nif] AND tipo='Férias'");
+              if (!$veriferias) {
+                printf("Error: %s\n", mysqli_error($conn));
+                exit();
+              }
+              $resultcheck1 = mysqli_fetch_array($veriferias);
+            if (!$resultcheck1){
+              if($_POST['salario']<=550){
+                $ss=($_POST['salario']*0.11);
+                $irs=($_POST['salario']*0.08);
+                $salariofinal=($_POST['salario']-$ss-$irs);
+                mysqli_query($conn, "INSERT INTO salario (nif, ano, mes, dias, salariobruto ,salarioniss, salarioirs, salariofinal, tipo, turno ) VALUES ('$_POST[nif]', '$_POST[ano]', '$_POST[mes]', '$_POST[dias]', '$_POST[salario]','$ss', '$irs', '$salariofinal', '$_POST[tipo]',  '$_POST[turno]') ");
               }
             }
-
+          }
+          else {
+            echo "Ferias contabilizadas";
+          }
+          if($_POST['tipo']=="Natal"){
+            echo "string";
+            $verinatal=mysqli_query($conn,"SELECT nif, ano,tipo FROM salario WHERE ano=$_POST[ano] AND nif=$_POST[nif] AND tipo='Natal'");
+            if (!$verinatal) {
+              printf("Error: %s\n", mysqli_error($conn));
+              exit();
+            }
+            $resultcheck2 = mysqli_fetch_array($verinatal);
+            if (!$resultcheck2){
+              echo "string2";
+              if($_POST['salario']<=550){
+                $ss=($_POST['salario']*0.11);
+                $irs=($_POST['salario']*0.08);
+                $salariofinal=($_POST['salario']-$ss-$irs);
+                mysqli_query($conn, "INSERT INTO salario (nif, ano, mes, dias, salariobruto ,salarioniss, salarioirs, salariofinal, tipo, turno ) VALUES ('$_POST[nif]', '$_POST[ano]', '$_POST[mes]', '$_POST[dias]', '$_POST[salario]','$ss', '$irs', '$salariofinal', '$_POST[tipo]',  '$_POST[turno]') ");
+              }
+            }
+          }
+          else {
+            echo "Natal contabilizado";
           }
         }
-         ?>
+        else {
+          echo "nif errado";
+        }
+      }
+       ?>
     </div>
 </div>
