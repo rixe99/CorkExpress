@@ -94,6 +94,18 @@
                     </div>
                 </div>
                 <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="select" class=" form-control-label">Turno</label>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <select name="turno" id="select" class="form-control">
+                            <option value="0">Please select</option>
+                            <option value="Manhã" <?php if(isset($_POST['turno'])){$turno=$_POST['turno'];}  ?>>Manhã</option>
+                            <option value="Noite" <?php if(isset($_POST['turno'])){$turno=$_POST['turno'];}  ?>>Noite</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
                       <div class="col col-md-3">
                           <label for="text-input" class=" form-control-label">Ano:</label>
                       </div>
@@ -117,18 +129,6 @@
                             <input type="number" id="text-input" name="dias" placeholder="Dias" class="form-control">
                           </div>
                     </div>
-            <div class="row form-group">
-                <div class="col col-md-3">
-                    <label for="select" class=" form-control-label">Turno</label>
-                </div>
-                <div class="col-12 col-md-6">
-                    <select name="turno" id="select" class="form-control">
-                        <option value="0">Please select</option>
-                        <option value="Manhã" <?php if(isset($_POST['turno'])){$turno=$_POST['turno'];}  ?>>Manhã</option>
-                        <option value="Noite" <?php if(isset($_POST['turno'])){$turno=$_POST['turno'];}  ?>>Noite</option>
-                    </select>
-                </div>
-            </div>
             <div class="card-footer">
                 <button type="submit" name="insere" class="btn btn-primary btn-sm">
                     <i class="fa fa-dot-circle-o"></i> Submit
