@@ -81,6 +81,19 @@
                     </div>
                 </div>
                 <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="select" class=" form-control-label">Tipo de pagamento</label>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <select name="tipo" id="select" class="form-control">
+                            <option value="0">Please select</option>
+                            <option value="Mensal" <?php if(isset($_POST['tipo'])){$tipo=$_POST['tipo'];}  ?>>Mensal</option>
+                            <option value="Férias" <?php if(isset($_POST['tipo'])){$tipo=$_POST['tipo'];}  ?>>Férias</option>
+                            <option value="Natal" <?php if(isset($_POST['tipo'])){$tipo=$_POST['tipo'];}  ?>>Natal</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
                       <div class="col col-md-3">
                           <label for="text-input" class=" form-control-label">Ano:</label>
                       </div>
@@ -104,19 +117,6 @@
                             <input type="number" id="text-input" name="dias" placeholder="Dias" class="form-control">
                           </div>
                     </div>
-            <div class="row form-group">
-                <div class="col col-md-3">
-                    <label for="select" class=" form-control-label">Tipo de pagamento</label>
-                </div>
-                <div class="col-12 col-md-6">
-                    <select name="tipo" id="select" class="form-control">
-                        <option value="0">Please select</option>
-                        <option value="Mensal" <?php if(isset($_POST['tipo'])){$tipo=$_POST['tipo'];}  ?>>Mensal</option>
-                        <option value="Férias" <?php if(isset($_POST['tipo'])){$tipo=$_POST['tipo'];}  ?>>Férias</option>
-                        <option value="Natal" <?php if(isset($_POST['tipo'])){$tipo=$_POST['tipo'];}  ?>>Natal</option>
-                    </select>
-                </div>
-            </div>
             <div class="row form-group">
                 <div class="col col-md-3">
                     <label for="select" class=" form-control-label">Turno</label>
