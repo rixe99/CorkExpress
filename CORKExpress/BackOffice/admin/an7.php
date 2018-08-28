@@ -2,7 +2,7 @@
     <div class="col-lg-6">
       <div class="card">
           <div class="card-header">
-              <strong>Inserir dados  do </strong> Administrador
+              <strong>Update dados  do </strong> Administrador
           </div>
           <div class="card-body card-block">
             <?php
@@ -78,6 +78,8 @@
           if(!$user && !$pass){
             include '../../connect/conn.php';
             mysqli_query($conn,"UPDATE trabalhadores SET nome='$_POST[nome]', apelido='$_POST[apelido]', email='$_POST[email]', categoria='$_POST[categoria]', username='$_POST[username]', password='$_POST[password]' WHERE idtrabalhador='$editar'");
+            echo '<meta http-equiv="refresh"
+                content="0;url=admin.php">';
           }
           else {
             if($user){

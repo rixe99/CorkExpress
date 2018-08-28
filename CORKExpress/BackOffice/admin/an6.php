@@ -2,7 +2,7 @@
     <div class="col-lg-6">
       <div class="card">
           <div class="card-header">
-              <strong>Inserir dados  do </strong> trabalhador
+              <strong>Update dados  do </strong> trabalhador
           </div>
           <div class="card-body card-block">
             <?php
@@ -73,10 +73,30 @@
                       </div>
                     <div class="col-12 col-md-9">
                         <select name="categoria" id="select" class="form-control">
-                            <option value="0">Please select</option>
-                            <option value="Finanças" <?php if(isset($_POST['categoria'])){$categoria=$_POST['categoria'];}  ?>>Finanças</option>
-                            <option value="Operador" <?php if(isset($_POST['categoria'])){$categoria=$_POST['categoria'];}  ?>>Operador</option>
-                            <option value="I.T" <?php if(isset($_POST['categoria'])){$categoria=$_POST['categoria'];}  ?>>I.T</option>
+                          <?php
+                            if ($dados["categoria"] == "Finanças"){
+                              echo '
+                              <option value="Finanças">Finanças</option>
+                              <option value="Operador">Operador</option>
+                              <option value="I.T" >I.T</option>';
+                            }
+                            elseif ($dados["categoria"] == "Operador") {
+                              echo '
+                              <option value="Operador">Operador</option>
+                              <option value="Finanças">Finanças</option>
+                              <option value="I.T" >I.T</option>';
+                            }
+                            elseif ($dados["categoria"] == "I.T") {
+                              echo '
+                              <option value="I.T" >I.T</option>
+                              <option value="Finanças">Finanças</option>
+                              <option value="Operador">Operador</option>';
+                            }
+                          ?>
+                          <?php
+                          if(isset($_POST['categoria'])){
+                            $categoria=$_POST['categoria'];
+                          }  ?>
                         </select>
                     </div>
                   </div>
@@ -97,7 +117,7 @@
                           </div>
                       </div>
           <div class="card-footer">
-              <button type="submit" name="insere" class="btn btn-primary btn-sm">
+              <button type="submit" name="update" class="btn btn-primary btn-sm">
                   <i class="fa fa-dot-circle-o"></i> Update
               </button>
               <button type="reset" class="btn btn-danger btn-sm">
@@ -105,6 +125,40 @@
               </button>
           </div>
         </form>
+        <?php
+        if(isset($_POST["update"])){
+          include '../../connect/conn.php';
+          $user=mysqli_fetch_array(mysqli_query($conn,"SELECT username FROM trabalhadores WHERE username='$_POST[username]' and idtrabalhador !='$editar'"));
+          $pass=mysqli_fetch_array(mysqli_query($conn,"SELECT password FROM trabalhadores WHERE password='$_POST[password]' and idtrabalhador !='$editar'"));
+          $nib=mysqli_fetch_array(mysqli_query($conn,"SELECT nib FROM trabalhadores WHERE nib='$_POST[nib]' and idtrabalhador !='$editar'"));
+          $niss=mysqli_fetch_array(mysqli_query($conn,"SELECT niss FROM trabalhadores WHERE niss='$_POST[niss]' and idtrabalhador !='$editar'"));
+          $nif=mysqli_fetch_array(mysqli_query($conn,"SELECT nif FROM trabalhadores WHERE nif='$_POST[nif]' and idtrabalhador !='$editar'"));
+          if(!$user && !$pass && !$nib && !$niss && !$nif){
+            mysqli_query($conn, "UPDATE trabalhadores SET nome = '$_POST[nome]', apelido = '$_POST[apelido]', nif = '$_POST[nif]', nib = '$_POST[nib]', niss = '$_POST[niss]', categoria = '$_POST[categoria]', morada = '$_POST[morada]', email = '$_POST[email]',password = '$_POST[password]', username = '$_POST[username]' WHERE idtrabalhador = '$editar'");
+            echo 'sucesso';
+            echo '<meta http-equiv="refresh"
+                content="0;url=admin.php">';
+          include '../../connect/deconn.php';
+        }
+            else{
+              if($user){
+                echo 'Ja tem user';
+              }
+              if($pass){
+                echo'Ja tem pass';
+              }
+              if($nib){
+                echo'Ja tem nib';
+              }
+              if($niss){
+                echo 'Ja tem niss';
+              }
+              if($nif){
+                echo 'Ja tem nif';
+              }
+            }
+          }
+         ?>
       </div>
   </div>
 <center>
