@@ -20,7 +20,7 @@
                   <tbody>
                     <?php
                         include '../../connect/conn.php';
-                        $dados = mysqli_query($conn,"SELECT nome, apelido, nif, nib, niss ,categoria, morada, email, password, username  FROM trabalhadores WHERE tipouser=0 ORDER BY nome ");
+                        $dados = mysqli_query($conn,"SELECT idtrabalhador, nome, apelido, nif, nib, niss ,categoria, morada, email, password, username  FROM trabalhadores WHERE tipouser=0 ORDER BY nome ");
 
                           while ($row=mysqli_fetch_assoc($dados)){
                             echo '<tr>';
@@ -34,6 +34,7 @@
                             echo '<td>'. $row['niss']. '</td>';
                             echo '<td>'. $row['username']. '</td>';
                             echo '<td>'. $row['password']. '</td>';
+                            echo '<td><a href="admin.php?editar='.$row["idtrabalhador"].'&an=6"><button>Editar</button></a></td>';
                             echo '</tr>';
                           }
 

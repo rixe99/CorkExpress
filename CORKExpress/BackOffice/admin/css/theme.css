@@ -4253,7 +4253,7 @@ section {
     font-weight: 400;
     text-transform: capitalize;
     line-height: 1;
-    padding: 22px 40px;
+    padding: 22px 20px;
     white-space: nowrap;
 }
 
@@ -4264,7 +4264,7 @@ section {
 
 .table-earning tbody td {
     color: #808080;
-    padding: 12px 40px;
+    padding: 12px 20px;
     white-space: nowrap;
 }
 
@@ -4687,7 +4687,7 @@ section {
     color: #fff;
     font-weight: 400;
     text-transform: capitalize;
-    padding: 18px 40px;
+    padding: 18px 20px;
     padding-right: 10px;
 }
 
