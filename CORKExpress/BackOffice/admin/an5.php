@@ -22,7 +22,7 @@
                     include '../../connect/conn.php';
                     $first_letter = substr($_POST['search'], 0, 1);
                     $nome=mysqli_fetch_array(mysqli_query($conn,"SELECT nome FROM trabalhadores  WHERE LEFT (nome,1)='" . $first_letter . "' "));
-                    $apelido=mysqli_fetch_array(mysqli_query($conn,"SELECT apelido FROM trabalhadores WHERE password='$_POST[search]'" ));
+                    $apelido=mysqli_fetch_array(mysqli_query($conn,"SELECT apelido FROM trabalhadores WHERE LEFT (apelido,1)='" . $first_letter . "' "));
 
 
                   //  include '../../connect/deconn.php';
@@ -30,7 +30,7 @@
 
                 //    include '../../connect/conn.php';
                       $first_letter = substr($_POST['search'], 0, 1);
-                      $dados =mysqli_query($conn,"SELECT nome, apelido, nif  FROM trabalhadores  WHERE LEFT (nome,1)='" . $first_letter . "' ORDER BY nome")/*)*/;
+                      $dados =mysqli_query($conn,"SELECT nome, apelido, nif  FROM trabalhadores  WHERE LEFT (nome,1)='" . $first_letter . "'  ORDER BY nome")/*)*/;
 
                         while ($row=mysqli_fetch_assoc($dados)){
                           echo '<tr>';
@@ -40,7 +40,33 @@
                           echo '</tr>';
                         }
                       }
-                  }
+
+                      if($apelido){
+                        $first_letter = substr($_POST['search'], 0, 1);
+                        $dados =mysqli_query($conn,"SELECT nome, apelido, nif  FROM trabalhadores  WHERE LEFT (apelido,1)='" . $first_letter . "'  ORDER BY nome")/*)*/;
+
+                          while ($row=mysqli_fetch_assoc($dados)){
+                            echo '<tr>';
+                            echo '<td>'. $row['nome']. '</td>';
+                            echo '<td>'. $row['apelido']. '</td>';
+                            echo '<td>'. $row['nif']. '</td>';
+                            echo '</tr>';
+                          }
+                        }
+
+                        if (empty($_POST['search'])){
+                        $dados =mysqli_query($conn,"SELECT nome, apelido, nif  FROM trabalhadores ");
+
+                          while ($row=mysqli_fetch_assoc($dados)){
+                            echo '<tr>';
+                            echo '<td>'. $row['nome']. '</td>';
+                            echo '<td>'. $row['apelido']. '</td>';
+                            echo '<td>'. $row['nif']. '</td>';
+                            echo '</tr>';
+                          }
+                        }
+                      }
+
 
                    ?>
                 </tbody>
