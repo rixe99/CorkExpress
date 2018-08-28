@@ -286,7 +286,7 @@
 
             <!-- MAIN CONTENT-->
             <div class="main-content">
-                <div class="section__content section__content--p30">
+                <div class="section__content section__content--p30" style="height:1000px;">
                   <?php
                   @$an = $_REQUEST["an"];
                    switch ($an) {

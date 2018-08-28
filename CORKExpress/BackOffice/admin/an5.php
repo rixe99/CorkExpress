@@ -7,16 +7,16 @@
 <br>
   <div class="row">
     <div class="col-lg-9" style="max-width:30%;">
-        <div class="table-responsive table--no-card m-b-30">
+        <div class="table-responsive table--no-card m-b-30"style="overflow-x: hidden; width:450px">
             <table class="table table-borderless table-striped table-earning">
-                <thead>
+                <thead style="display:block;">
                     <tr>
-                        <th>Nome</th>
-                        <th>Apelido</th>
-                        <th class="text-right">Nif</th>
+                        <th style="width:150px">Nome</th>
+                        <th style="width:150px">Apelido</th>
+                        <th class="text-right" style="width:150px">Nif</th>
                     </tr>
-                </thead>
-                <tbody>
+                </thead >
+                <tbody style="display:block; overflow:scroll; height:160px;">
                   <?php
                   if(isset($_POST["pesque"])){
                     include '../../connect/conn.php';
@@ -74,7 +74,6 @@
         </div>
     </div>
 </div>
-<br><br>
 <div class="col-lg-6">
 <div class="card">
     <div class="card-header">
