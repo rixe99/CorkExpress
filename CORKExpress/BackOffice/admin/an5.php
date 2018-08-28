@@ -55,7 +55,7 @@
                         }
 
                         if (empty($_POST['search'])){
-                        $dados =mysqli_query($conn,"SELECT nome, apelido, nif  FROM trabalhadores ");
+                        $dados =mysqli_query($conn,"SELECT nome, apelido, nif  FROM trabalhadores where tipouser = 0");
 
                           while ($row=mysqli_fetch_assoc($dados)){
                             echo '<tr>';
