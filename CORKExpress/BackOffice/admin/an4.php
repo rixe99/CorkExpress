@@ -20,13 +20,13 @@
 
                       while ($row=mysqli_fetch_assoc($dados)){
                         echo '<tr>';
-                        echo '<td>'. $row['nome']. '</td>';
-                        echo '<td>'. $row['apelido']. '</td>';
-                        echo '<td>'. $row['email']. '</td>';
-                        echo '<td>'. $row['categoria']. '</td>';
-                        echo '<td>'. $row['username']. '</td>';
-                        echo '<td>'. $row['password']. '</td>';
-                        echo '<td><a href="admin.php?editar='.$row["idtrabalhador"].'&an=7"><button>Editar</button></a></td>';
+                        echo '<td style="padding: 12px 20px;">'. $row['nome']. '</td>';
+                        echo '<td style="padding: 12px 20px;">'. $row['apelido']. '</td>';
+                        echo '<td style="padding: 12px 20px;">'. $row['email']. '</td>';
+                        echo '<td style="padding: 12px 20px;">'. $row['categoria']. '</td>';
+                        echo '<td style="padding: 12px 20px;">'. $row['username']. '</td>';
+                        echo '<td style="padding: 12px 20px;">'. $row['password']. '</td>';
+                        echo '<td style="padding: 12px 20px;"><a href="admin.php?editar='.$row["idtrabalhador"].'&an=7"><button>Editar</button></a></td>';
                         echo '</tr>';
                       }
                 ?>
