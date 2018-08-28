@@ -126,7 +126,7 @@
                 if($niss){
                   echo 'Ja tem niss';
                 }
-                if($nisf){
+                if($nif){
                   echo 'Ja tem nif';
                 }
               }

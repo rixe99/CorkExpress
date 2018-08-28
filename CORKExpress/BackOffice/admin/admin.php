@@ -309,7 +309,7 @@
                        include 'an6.php';
                        break;
                     case '7':
-                      include 'an6.php';
+                      include 'an7.php';
                       break;
                    }
                    ?>

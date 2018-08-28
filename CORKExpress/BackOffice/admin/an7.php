@@ -41,7 +41,6 @@
                       </div>
                     <div class="col-12 col-md-9">
                         <select name="categoria" id="select" class="form-control">
-                            <option value="0">Please select</option>
                             <option value="Administrador" <?php if(isset($_POST['categoria'])){$categoria=$_POST['categoria'];}  ?>>Administrador</option>
                         </select>
                     </div>
@@ -71,7 +70,25 @@
               </button>
           </div>
         </form>
-
+        <?php
+        if(isset($_POST['insere'])){
+          include '../../connect/conn.php';
+          $user=mysqli_fetch_array(mysqli_query($conn,"SELECT username FROM trabalhadores WHERE username='$_POST[username]' AND idtrabalhador!='$editar' " ));
+          $pass=mysqli_fetch_array(mysqli_query($conn,"SELECT password FROM trabalhadores WHERE password='$_POST[password]' AND idtrabalhador!='$editar' " ));
+          if(!$user && !$pass){
+            include '../../connect/conn.php';
+            mysqli_query($conn,"UPDATE trabalhadores SET nome='$_POST[nome]', apelido='$_POST[apelido]', email='$_POST[email]', categoria='$_POST[categoria]', username='$_POST[username]', password='$_POST[password]' WHERE idtrabalhador='$editar'");
+          }
+          else {
+            if($user){
+              echo 'Ja tem user';
+            }
+            if($pass){
+              echo'Ja tem pass';
+            }
+          }
+        }
+        ?>
       </div>
   </div>
 <center>
