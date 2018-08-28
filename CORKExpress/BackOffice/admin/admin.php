@@ -308,6 +308,9 @@
                      case '6':
                        include 'an6.php';
                        break;
+                    case '7':
+                      include 'an6.php';
+                      break;
                    }
                    ?>
                 </div>
