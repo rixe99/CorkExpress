@@ -26,6 +26,7 @@
                         echo '<td>'. $row['categoria']. '</td>';
                         echo '<td>'. $row['username']. '</td>';
                         echo '<td>'. $row['password']. '</td>';
+                        echo '<td><a href="admin.php?editar='.$row["idtrabalhador"].'&an=7"><button>Editar</button></a></td>';
                         echo '</tr>';
                       }
                 ?>
