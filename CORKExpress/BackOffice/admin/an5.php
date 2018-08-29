@@ -13,7 +13,7 @@
                     <tr>
                         <th style="width:150px">Nome</th>
                         <th style="width:150px">Apelido</th>
-                        <th class="text-right" style="width:150px">Nif</th>
+                        <th style="width:150px">Nif</th>
                     </tr>
                 </thead >
                 <tbody style="display:block; overflow:scroll; height:160px;">
