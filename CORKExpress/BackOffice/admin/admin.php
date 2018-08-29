@@ -95,7 +95,7 @@
                             <a href="?an=5"><i class="fas fa-euro"></i>Salario</a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="?an=8">
                                 <i class="fas fa-ban"></i>Despedir</a>
                         </li>
                         <li>
@@ -308,8 +308,11 @@
                      case '6':
                        include 'an6.php';
                        break;
-                    case '7':
+                     case '7':
                       include 'an7.php';
+                      break;
+                     case '8':
+                      include 'an8.php';
                       break;
                    }
                    ?>
