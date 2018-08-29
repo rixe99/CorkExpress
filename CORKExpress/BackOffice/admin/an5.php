@@ -1,9 +1,10 @@
 <form class="form-header" action="" method="POST">
-      <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+      <input class="au-input au-input--xl" type="text" name="search" placeholder="Procura por nome &amp; apelido do trabalhador" />
       <button class="au-btn--submit" name="pesque" type="submit">
           <i class="zmdi zmdi-search"></i>
       </button>
 </form>
+<small>Se quiser aparecer todos os trabalhadores clique só no botão e deixe barra em branco</small>
 <br>
   <div class="row">
     <div class="col-lg-9" style="max-width:30%;">
