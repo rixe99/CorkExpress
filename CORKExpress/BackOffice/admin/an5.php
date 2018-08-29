@@ -90,63 +90,156 @@
                     <p class="form-control-static">1</p>
                 </div>
             </div>
-            <div class="row form-group">
-                  <div class="col col-md-3">
-                      <label for="text-input" class=" form-control-label">Nif:</label>
-                  </div>
-                  <div class="col-12 col-md-6">
-                      <input type="number" id="text-input" name="nif" placeholder="Nif" class="form-control">
-                  </div>
-              </div>
-              <div class="row form-group">
-                    <div class="col col-md-3">
-                        <label for="text-input" class=" form-control-label">Salario:</label>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <input type="number" id="text-input" name="salario" placeholder="Salario" class="form-control">
-                    </div>
-                </div>
+            <?php echo "your variable = ".  $_GET['myvariable'];
+            if ($_GET['myvariable'] == "Mensal") {
+              echo '
                 <div class="row form-group">
                     <div class="col col-md-3">
                         <label for="select" class=" form-control-label">Tipo de pagamento</label>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <select name="tipo" id="select" class="form-control">
-                            <option value="0">Please select</option>
-                            <option value="Mensal" <?php if(isset($_POST['tipo'])){$tipo=$_POST['tipo'];}  ?>>Mensal</option>
-                            <option value="Férias" <?php if(isset($_POST['tipo'])){$tipo=$_POST['tipo'];}  ?>>Férias</option>
-                            <option value="Natal" <?php if(isset($_POST['tipo'])){$tipo=$_POST['tipo'];}  ?>>Natal</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row form-group">
-                    <div class="col col-md-3">
-                        <label for="select" class=" form-control-label">Turno</label>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <select name="turno" id="select" class="form-control">
-                            <option value="0">Please select</option>
-                            <option value="Manhã" <?php if(isset($_POST['turno'])){$turno=$_POST['turno'];}  ?>>Manhã</option>
-                            <option value="Noite" <?php if(isset($_POST['turno'])){$turno=$_POST['turno'];}  ?>>Noite</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row form-group">
-                      <div class="col col-md-3">
-                          <label for="text-input" class=" form-control-label">Ano:</label>
-                      </div>
-                      <div class="col-12 col-md-2">
-                          <input type="number" id="text-input" name="ano" placeholder="Ano" class="form-control">
-                      </div>
-                  </div>
-                  <div class="row form-group">
-                        <div class="col col-md-3">
-                            <label for="text-input" class=" form-control-label">Mes:</label>
-                        </div>
-                        <div class="col-12 col-md-2">
-                            <input type="number" id="text-input" name="mes" placeholder="Mes" class="form-control">
+                        <div class="col-12 col-md-6">
+                            <select name="tipo" id="select" class="form-control mv">
+                                <option value="Mensal" selected>Mensal</option>
+                                <option value="Férias">Férias</option>
+                                <option value="Natal">Natal</option>';
+                                 if(isset($_POST['tipo'])){
+                                   $tipo=$_POST['tipo'];
+                                 }
+                                 echo'
+                            </select>
                         </div>
                     </div>
+                    <div class="row form-group">
+                          <div class="col col-md-3">
+                              <label for="text-input" class=" form-control-label">Ano:</label>
+                          </div>
+                          <div class="col-12 col-md-2">
+                              <input type="number" id="text-input" name="ano" placeholder="Ano" class="form-control">
+                          </div>
+                      </div>
+                        <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="select" class=" form-control-label">Mes</label>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <select name="mes" id="select" class="form-control">
+                                  <option value="1">Janeiro</option>
+                                  <option value="2">Fevereiro</option>
+                                  <option value="3">Março</option>
+                                  <option value="4">Abril</option>
+                                  <option value="5">Maio</option>
+                                  <option value="6">Junho</option>
+                                  <option value="7">Julho</option>
+                                  <option value="8">Agosto</option>
+                                  <option value="9">Setembro</option>
+                                  <option value="10">Outubro</option>
+                                  <option value="11">Novembro</option>
+                                  <option value="12">Dezembro</option>
+                                     ';
+                                     if(isset($_POST['mes'])){
+                                       $mes=$_POST['mes'];
+                                     }  echo'
+                                </select>
+                            </div>
+                        </div>';
+                      }
+                      elseif ($_GET['myvariable'] == "Férias") {
+                        echo '
+                          <div class="row form-group">
+                              <div class="col col-md-3">
+                                  <label for="select" class=" form-control-label">Tipo de pagamento</label>
+                              </div>
+                          <div class="col-12 col-md-6">
+                              <select name="tipo" id="select" class="form-control mv">
+                                  <option value="Mensal">Mensal</option>
+                                  <option value="Férias" selected>Férias</option>
+                                  <option value="Natal">Natal</option>';
+                                   if(isset($_POST['tipo'])){
+                                     $tipo=$_POST['tipo'];
+                                   }
+                                   echo'
+                              </select>
+                          </div>
+                      </div>
+                      <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="text-input" class=" form-control-label">Ano:</label>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <input type="number" id="text-input" name="ano" placeholder="Ano" class="form-control">
+                            </div>
+                        </div>
+                          <div class="row form-group">
+                              <div class="col col-md-3">
+                                  <label for="select" class=" form-control-label">Mes</label>
+                              </div>
+                              <div class="col-12 col-md-4">
+                                  <select name="mes" id="select" class="form-control">
+                                    <option value="1">Janeiro</option>
+                                    <option value="2">Fevereiro</option>
+                                    <option value="3">Março</option>
+                                    <option value="4">Abril</option>
+                                    <option value="5">Maio</option>
+                                    <option value="6">Junho</option>
+                                    <option value="7">Julho</option>
+                                    <option value="8">Agosto</option>
+                                    <option value="9">Setembro</option>
+                                    <option value="10">Outubro</option>
+                                    <option value="11">Novembro</option>
+                                    <option value="12">Dezembro</option>
+                                       ';
+                                       if(isset($_POST['mes'])){
+                                         $mes=$_POST['mes'];
+                                       }  echo'
+                                  </select>
+                              </div>
+                          </div>';
+                        }
+                        elseif ($_GET['myvariable'] == "Natal") {
+                          echo '
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label for="select" class=" form-control-label">Tipo de pagamento</label>
+                                </div>
+                            <div class="col-12 col-md-6">
+                                <select name="tipo" id="select" class="form-control mv">
+                                    <option value="Mensal">Mensal</option>
+                                    <option value="Férias">Férias</option>
+                                    <option value="Natal" selected>Natal</option>';
+                                     if(isset($_POST['tipo'])){
+                                       $tipo=$_POST['tipo'];
+                                     }
+                                     echo'
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                              <div class="col col-md-3">
+                                  <label for="text-input" class=" form-control-label">Ano:</label>
+                              </div>
+                              <div class="col-12 col-md-2">
+                                  <input type="number" id="text-input" name="ano" placeholder="Ano" class="form-control">
+                              </div>
+                          </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label for="select" class=" form-control-label">Mes</label>
+                                </div>
+                                <div class="col-12 col-md-4">
+                                    <select name="mes" id="select" class="form-control">
+                                      <option value="11">Novembro</option>
+                                         ';
+                                         if(isset($_POST['mes'])){
+                                           $mes=$_POST['mes'];
+                                         }  echo'
+                                    </select>
+                                </div>
+                            </div>';
+                          }
+                      else {
+                          echo '<meta http-equiv="refresh" content="0;url=admin.php?an=5&myvariable=Mensal"';
+                      }
+                      ?>
                   <div class="row form-group">
                         <div class="col col-md-3">
                             <label for="text-input" class=" form-control-label">Quantos dias que trabalhou:</label>
@@ -155,6 +248,37 @@
                             <input type="number" id="text-input" name="dias" placeholder="Dias" class="form-control">
                           </div>
                     </div>
+                <div class="row form-group">
+                    <div class="col col-md-3">
+                        <label for="select" class=" form-control-label">Turno</label>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <select name="turno" id="select" class="form-control">
+                            <option value="Manhã">Manhã</option>
+                            <option value="Noite">Noite</option>
+                            <?php
+                            if(isset($_POST['turno'])){
+                              $turno=$_POST['turno'];
+                            }  ?>
+                        </select>
+                    </div>
+                </div>
+                    <div class="row form-group">
+                          <div class="col col-md-3">
+                              <label for="text-input" class=" form-control-label">Nif:</label>
+                          </div>
+                          <div class="col-12 col-md-6">
+                              <input type="number" id="text-input" name="nif" placeholder="Nif" class="form-control">
+                          </div>
+                      </div>
+                      <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="text-input" class=" form-control-label">Salario:</label>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <input type="number" id="text-input" name="salario" placeholder="Salario" class="form-control">
+                            </div>
+                        </div>
             <div class="card-footer">
                 <button type="submit" name="insere" class="btn btn-primary btn-sm">
                     <i class="fa fa-dot-circle-o"></i> Submit
@@ -164,6 +288,18 @@
                 </button>
             </div>
         </form>
+        <script>
+          function displayVals() {
+            singleValues = "<?php echo $_GET['myvariable'] ?>";
+            if (singleValues != $( ".mv" ).val()) {
+
+              singleValues = $( ".mv" ).val();
+              window.location.href = "admin.php?an=5&myvariable=" + singleValues;
+            }
+          }
+          $( ".mv" ).change( displayVals );
+          displayVals();
+        </script>
         <?php
       if(isset($_POST["insere"])){
         include '../../connect/conn.php';
