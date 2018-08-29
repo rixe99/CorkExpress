@@ -80,6 +80,11 @@ validar();
                       <li class="has-sub">
                           <a class="js-arrow" href="#">
                               <i class="fas fa-tachometer-alt"></i>Admin</a>
+                              <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="?an=1">Dados</a>
+                                </li>
+                            </ul>
                       </li>
                         <li>
                             <a href="?an=5"><i class="fas fa-euro"></i>Salario</a>
