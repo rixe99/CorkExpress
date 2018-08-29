@@ -92,7 +92,6 @@
                     <p class="form-control-static">1</p>
                 </div>
             </div>
-            <?php echo "your variable = ".  $_GET['myvariable'];
             if ($_GET['myvariable'] == "Mensal") {
               echo '
                 <div class="row form-group">
