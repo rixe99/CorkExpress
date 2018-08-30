@@ -10,7 +10,7 @@
               <label for="text-input" class=" form-control-label mainlab">Password:</label>
           </div>
           <div class="col-12 col-md-8">
-              <input type="password" id="text-input" name="password" placeholder="Password" class="form-control">
+              <input type="password" id="text-input" name="password" placeholder="Password" class="form-control" required>
           </div>
       </div>
 
@@ -28,14 +28,17 @@
 
 <?php
     if (isset($_POST["sim"])){
-      if($_POST["password"] == "abc.123")
+      if($_POST["password"] == "abc.123"){
         include '../../connect/conn.php';
         $niftrabalhador = $_REQUEST["niftrabalhador"];
         mysqli_query($conn, "DELETE FROM trabalhadores WHERE nif = '$niftrabalhador'");
         mysqli_query($conn, "DELETE FROM salario WHERE nif = '$niftrabalhador'");
         echo '<meta http-equiv="refresh" content="0;url=admin.php?an=8">';
+      }else{
+        echo 'Password incorreta';
+      }
     }
-    if(isset($_POST["sim"])){
+    if(isset($_POST["nao"])){
       echo '<meta http-equiv="refresh" content="0;url=admin.php?an=8">';
     }
  ?>
