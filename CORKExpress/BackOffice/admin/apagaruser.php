@@ -24,7 +24,7 @@
       </div>
     </form>
   </div>
-  <div class="box6"></div>
+  <div class="box5"></div>
 </div>
 <?php
     if (isset($_POST["sim"])){
