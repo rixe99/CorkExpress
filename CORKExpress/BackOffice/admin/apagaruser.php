@@ -1,7 +1,7 @@
 <div class="mainbox">
+  <div class="box1"></div>
   <div class="box2"></div>
   <div class="box3"></div>
-  <div class="box1"></div>
   <div class="box4">
     <div class="textv3"><strong>Quere despedir o/a trabalhador/a <?php include '../../connect/conn.php'; $niftrabalhador = $_REQUEST["niftrabalhador"]; $dado=mysqli_fetch_array(mysqli_query($conn,"SELECT nome, apelido FROM trabalhadores WHERE nif = '$niftrabalhador'" )); echo'<br>   '.$dado["nome"].' '.$dado["apelido"]; ?> ?</strong></div>
     <form method="post">
@@ -24,8 +24,8 @@
       </div>
     </form>
   </div>
+  <div class="box6"></div>
 </div>
-
 <?php
     if (isset($_POST["sim"])){
       if($_POST["password"] == "abc.123"){
