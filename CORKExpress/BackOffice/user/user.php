@@ -87,7 +87,7 @@ validar();
                             </ul>
                       </li>
                         <li>
-                            <a href="?an=5"><i class="fas fa-euro"></i>Salario</a>
+                            <a href="?an=2"><i class="fas fa-euro"></i>Salario</a>
                         </li>
                         <li>
                             <a href="#"><i class="fas fa-ban"></i>Despedir</a>
