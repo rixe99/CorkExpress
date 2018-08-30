@@ -32,7 +32,7 @@
                           echo '<td style="padding: 12px 20px;">'. $row['niss']. '</td>';
                           echo '<td style="padding: 12px 20px;">'. $row['username']. '</td>';
                           echo '<td style="padding: 12px 20px;">'. $row['password']. '</td>';
-                          echo '<td style="padding: 12px 20px;"><a href="admin.php?editar='.$row["idtrabalhador"].'&an=6"><button>Editar</button></a></td>';
+                          echo '<td style="padding: 12px 20px;"><a href="user.php?editar='.$row["idtrabalhador"].'&an=3"><button>Editar</button></a></td>';
                           echo '</tr>';
                         }
 
