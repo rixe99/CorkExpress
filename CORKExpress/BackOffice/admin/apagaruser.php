@@ -31,7 +31,7 @@
       if($_POST["password"] == "abc.123")
         include '../../connect/conn.php';
         $niftrabalhador = $_REQUEST["niftrabalhador"];
-        mysqli_query($conn, "DELETE FROM trabalhadores WHERE idtrabalhador = '$niftrabalhador'");
+        mysqli_query($conn, "DELETE FROM trabalhadores WHERE nif = '$niftrabalhador'");
         mysqli_query($conn, "DELETE FROM salario WHERE nif = '$niftrabalhador'");
         echo '<meta http-equiv="refresh" content="0;url=admin.php?an=8">';
     }
