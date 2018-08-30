@@ -32,7 +32,7 @@
 
                 //    include '../../connect/conn.php';
                       $first_letter = substr($_POST['search'], 0, 1);
-                      $dados =mysqli_query($conn,"SELECT idtrabalhador, nome, apelido, nif FROM trabalhadores  WHERE LEFT (nome,1)='" . $first_letter . "' AND tipouser=0 ORDER BY nome");
+                      $dados =mysqli_query($conn,"SELECT idtrabalhador, nome, apelido, nif FROM trabalhadores  WHERE LEFT (nome,1)='" . $first_letter . "' OR LEFT (apelido,1)='" . $first_letter . "' AND tipouser=0 ORDER BY nome");
 
                         while ($row=mysqli_fetch_assoc($dados)){
                           echo '<tr>';
