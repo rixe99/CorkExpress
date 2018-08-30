@@ -8,7 +8,7 @@
 <br>
   <div class="row">
     <div class="col-lg-9" style="max-width:30%;">
-        <div class="table-responsive table--no-card m-b-30"style="overflow-x: hidden; width:520px;">
+        <div class="table-responsive table--no-card m-b-30"style="overflow-x: hidden; width:512px;">
             <table class="table table-borderless table-striped table-earning">
                 <thead style="display:block;">
                     <tr>
