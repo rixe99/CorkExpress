@@ -87,7 +87,13 @@ img {
   font-size: 22px;
   position: relative;
   top: 12.5px;
-  left: -28px;
+  left: -39.99px;
+}
+.box{
+  float: left;
+}
+.boxx{
+  float: right;
 }
 
 p {
@@ -4247,7 +4253,7 @@ section {
     font-weight: 400;
     text-transform: capitalize;
     line-height: 1;
-    padding: 22px 40px;
+    padding: 22px 20px;
     white-space: nowrap;
 }
 
@@ -4681,7 +4687,7 @@ section {
     color: #fff;
     font-weight: 400;
     text-transform: capitalize;
-    padding: 18px 40px;
+    padding: 18px 20px;
     padding-right: 10px;
 }
 
