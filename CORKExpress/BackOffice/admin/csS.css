@@ -66,9 +66,14 @@ top:10px;
 
 .maingrup{
   position: relative;
-  top: 40px;
+  top: 30px;
 }
 .mainlab{
   position: relative;
   top: 5px;
+}
+
+.mainbut{
+  position: relative;
+  top: 30px;
 }

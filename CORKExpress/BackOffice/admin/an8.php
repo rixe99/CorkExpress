@@ -70,7 +70,7 @@
                             echo '<td>'. $row['nome']. '</td>';
                             echo '<td>'. $row['apelido']. '</td>';
                             echo '<td>'. $row['nif']. '</td>';
-                            echo '<td style="padding: 12px 20px;"><a href="admin.php?an=8&ann=1&idtrabalhador='.$row["idtrabalhador"].'"><button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="zmdi zmdi-delete"></i></button></a> </td>';
+                            echo '<td style="padding: 12px 20px;"><a href="admin.php?an=8&ann=1&niftrabalhador='.$row["nif"].'"><button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="zmdi zmdi-delete"></i></button></a> </td>';
                             echo '</tr>';
                           }
                         }
