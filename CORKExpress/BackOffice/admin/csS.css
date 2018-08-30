@@ -77,6 +77,13 @@ left: -20px;
 top:10px;
 }
 
+.erro{
+  color: red;
+  position: relative;
+  top: -76px;
+  left: 320px;
+  font-size: 22px;
+}
 .maingrup{
   position: relative;
   top: 30px;
