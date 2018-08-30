@@ -23,45 +23,6 @@
                   if(isset($_POST["pesque"])){
                     include '../../connect/conn.php';
                     $first_letter = substr($_POST['search'], 0, 1);
-                    $nome=mysqli_fetch_array(mysqli_query($conn,"SELECT nome FROM trabalhadores  WHERE LEFT (nome,1)='" . $first_letter . "' "));
-                    $apelido=mysqli_fetch_array(mysqli_query($conn,"SELECT apelido FROM trabalhadores WHERE LEFT (apelido,1)='" . $first_letter . "' "));
-
-
-                  //  include '../../connect/deconn.php';
-                    if($nome){
-
-                //    include '../../connect/conn.php';
-                      $first_letter = substr($_POST['search'], 0, 1);
-                      $dados =mysqli_query($conn,"SELECT idtrabalhador, nome, apelido, nif FROM trabalhadores  WHERE LEFT (nome,1)='" . $first_letter . "' OR LEFT (apelido,1)='" . $first_letter . "' AND tipouser=0 ORDER BY nome");
-
-                        while ($row=mysqli_fetch_assoc($dados)){
-                          echo '<tr>';
-                          echo '<td>'. $row['nome']. '</td>';
-                          echo '<td>'. $row['apelido']. '</td>';
-                          echo '<td>'. $row['nif']. '</td>';
-                          echo '<td style="padding: 12px 20px;"><a href="admin.php?an=8&ann=1&niftrabalhador='.$row["nif"].'"><button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="zmdi zmdi-delete"></i></button></a> </td>';
-                          echo '</tr>';
-                        }
-
-                      }
-                      else{
-                        if($apelido){
-                          $first_letter = substr($_POST['search'], 0, 1);
-                          $dados =mysqli_query($conn,"SELECT idtrabalhador, nome, apelido, nif  FROM trabalhadores  WHERE LEFT (apelido,1)='" . $first_letter . "' AND tipouser=0 ORDER BY nome");
-
-                            while ($row=mysqli_fetch_assoc($dados)){
-                              echo '<tr>';
-                              echo '<td>'. $row['nome']. '</td>';
-                              echo '<td>'. $row['apelido']. '</td>';
-                              echo '<td>'. $row['nif']. '</td>';
-                              echo '<td style="padding: 12px 20px;"><a href="admin.php?an=8&ann=1&niftrabalhador='.$row["nif"].'"><button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="zmdi zmdi-delete"></i></button></a> </td>';
-                              echo '</tr>';
-                            }
-                          }
-
-                      }
-
-
                         if (empty($_POST['search'])){
                         $dados =mysqli_query($conn,"SELECT idtrabalhador, nome, apelido, nif  FROM trabalhadores where tipouser = 0");
 
@@ -70,9 +31,21 @@
                             echo '<td>'. $row['nome']. '</td>';
                             echo '<td>'. $row['apelido']. '</td>';
                             echo '<td>'. $row['nif']. '</td>';
-                            echo '<td style="padding: 12px 20px;"><a href="admin.php?an=8&ann=1&niftrabalhador='.$row["nif"].'"><button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="zmdi zmdi-delete"></i></button></a> </td>';
+                            echo '<td style="padding: 12px 20px;"><a href="admin.php?an=8&ann=1&niftrabalhador='.$row["nif"].'"><button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="zmdi zmdi-delete"></i></button></a></td>';
                             echo '</tr>';
                           }
+                        }else {
+                          $first_letter = substr($_POST['search'], 0, 1);
+                          $dados =mysqli_query($conn,"SELECT idtrabalhador, nome, apelido, nif FROM trabalhadores  WHERE LEFT (nome,1)='" . $first_letter . "' OR LEFT (apelido,1)='" . $first_letter . "' AND tipouser=0 ORDER BY nome");
+
+                            while ($row=mysqli_fetch_assoc($dados)){
+                              echo '<tr>';
+                              echo '<td>'. $row['nome']. '</td>';
+                              echo '<td>'. $row['apelido']. '</td>';
+                              echo '<td>'. $row['nif']. '</td>';
+                              echo '<td style="padding: 12px 20px;"><a href="admin.php?an=8&ann=1&niftrabalhador='.$row["nif"].'"><button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="zmdi zmdi-delete"></i></button></a></td>';
+                              echo '</tr>';
+                            }
                         }
                       }
 
