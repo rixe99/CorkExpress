@@ -1,5 +1,4 @@
-<center>
-  <div class="row">
+ss="row">
     <div class="col-lg-9" style="max-width:100%;">
         <div class="table-responsive table--no-card m-b-30">
             <table class="table table-borderless table-striped table-earning">
@@ -10,11 +9,11 @@
                         <th>Mes</th>
                         <th>Dias</th>
                         <th>Salario Bruto</th>
-                        <th class="text-right">SS</th>
-                        <th class="text-right">IRS</th>
-                        <th class="text-right">Salario Liquido</th>
-                        <th class="text-right">Truno</th>
-                        <th class="text-right">Tipo</th>
+                        <th>SS</th>
+                        <th>IRS</th>
+                        <th>Salario Liquido</th>
+                        <th>Truno</th>
+                        <th>Tipo</th>
                     </tr>
                 </thead>
                 <tbody>

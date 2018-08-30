@@ -1,5 +1,4 @@
-<center>
-  <div class="row">
+ss="row">
     <div class="col-lg-9" style="max-width:100%;">
         <div class="table-responsive table--no-card m-b-30">
             <table class="table table-borderless table-striped table-earning">
@@ -10,11 +9,11 @@
                         <th>Morada</th>
                         <th>Email</th>
                         <th>Categoria</th>
-                        <th class="text-right">NiB</th>
-                        <th class="text-right">NiF</th>
-                        <th class="text-right">Niss</th>
-                        <th class="text-right">Username</th>
-                        <th class="text-right">Password</th>
+                        <th>NiB</th>
+                        <th>NiF</th>
+                        <th>Niss</th>
+                        <th>Username</th>
+                        <th>Password</th>
                     </tr>
                 </thead>
                 <tbody>

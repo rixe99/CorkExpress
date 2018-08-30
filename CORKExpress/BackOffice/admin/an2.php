@@ -10,11 +10,11 @@
                           <th>Morada</th>
                           <th>Email</th>
                           <th>Categoria</th>
-                          <th class="text-right">NiB</th>
-                          <th class="text-right">NiF</th>
-                          <th class="text-right">Niss</th>
-                          <th class="text-right">Username</th>
-                          <th class="text-right">Password</th>
+                          <th>NiB</th>
+                          <th>NiF</th>
+                          <th>Niss</th>
+                          <th>Username</th>
+                          <th>Password</th>
                       </tr>
                   </thead>
                   <tbody>
@@ -37,7 +37,6 @@
                             echo '<td style="padding: 12px 20px;"><a href="admin.php?editar='.$row["idtrabalhador"].'&an=6"><button>Editar</button></a></td>';
                             echo '</tr>';
                           }
-
                     ?>
                   </tbody>
               </table>
