@@ -35,4 +35,7 @@
         mysqli_query($conn, "DELETE FROM salario WHERE nif = '$niftrabalhador'");
         echo '<meta http-equiv="refresh" content="0;url=admin.php?an=8">';
     }
+    if(isset($_POST["sim"])){
+      echo '<meta http-equiv="refresh" content="0;url=admin.php?an=8">';
+    }
  ?>
