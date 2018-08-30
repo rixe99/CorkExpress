@@ -30,6 +30,7 @@
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
+    <link rel="stylesheet" href="csS.css" type="text/css">
     <!-- Main CSS-->
     <link href="css/theme.css" type="text/css" rel="stylesheet" media="all">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>

@@ -8,16 +8,13 @@
 <br>
   <div class="row">
     <div class="col-lg-9" style="max-width:30%;">
-        <div class="table-responsive table--no-card m-b-30"style="overflow-x: hidden; width:450px">
+        <div class="table-responsive table--no-card m-b-30"style="overflow-x: hidden; width:520px;">
             <table class="table table-borderless table-striped table-earning">
                 <thead style="display:block;">
                     <tr>
                         <th style="width:150px">Nome</th>
                         <th style="width:150px">Apelido</th>
                         <th style="width:150px">Nif</th>
-                        <th style="width:150px">Nib</th>
-                        <th style="width:150px">Nss</th>
-                        <th style="width:150px">Categoria</th>
 
                     </tr>
                 </thead >
@@ -35,17 +32,14 @@
 
                 //    include '../../connect/conn.php';
                       $first_letter = substr($_POST['search'], 0, 1);
-                      $dados =mysqli_query($conn,"SELECT idtrabalhador, nome, apelido, nif, nib, niss, categoria  FROM trabalhadores  WHERE LEFT (nome,1)='" . $first_letter . "' AND tipouser=0 ORDER BY nome");
+                      $dados =mysqli_query($conn,"SELECT idtrabalhador, nome, apelido, nif FROM trabalhadores  WHERE LEFT (nome,1)='" . $first_letter . "' AND tipouser=0 ORDER BY nome");
 
                         while ($row=mysqli_fetch_assoc($dados)){
                           echo '<tr>';
                           echo '<td>'. $row['nome']. '</td>';
                           echo '<td>'. $row['apelido']. '</td>';
                           echo '<td>'. $row['nif']. '</td>';
-                      //    echo '<td>'. $row['nib']. '</td>';
-                      //    echo '<td>'. $row['niss']. '</td>';
-                      //    echo '<td>'. $row['categoria']. '</td>';
-                          echo '<td style="padding: 12px 20px;"> <a href="apagaruser.php?idtrabalhador='.$row["idtrabalhador"].'"><button>Apagar</button></a> </td>';
+                          echo '<td style="padding: 12px 20px;"><a href="admin.php?an=8&ann=1&idtrabalhador='.$row["idtrabalhador"].'"><button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="zmdi zmdi-delete"></i></button></a> </td>';
                           echo '</tr>';
                         }
 
@@ -53,13 +47,14 @@
                       else{
                         if($apelido){
                           $first_letter = substr($_POST['search'], 0, 1);
-                          $dados =mysqli_query($conn,"SELECT nome, apelido, nif  FROM trabalhadores  WHERE LEFT (apelido,1)='" . $first_letter . "' AND tipouser=0 ORDER BY nome");
+                          $dados =mysqli_query($conn,"SELECT idtrabalhador, nome, apelido, nif  FROM trabalhadores  WHERE LEFT (apelido,1)='" . $first_letter . "' AND tipouser=0 ORDER BY nome");
 
                             while ($row=mysqli_fetch_assoc($dados)){
                               echo '<tr>';
                               echo '<td>'. $row['nome']. '</td>';
                               echo '<td>'. $row['apelido']. '</td>';
                               echo '<td>'. $row['nif']. '</td>';
+                              echo '<td style="padding: 12px 20px;"><a href="admin.php?an=8&ann=1&idtrabalhador='.$row["idtrabalhador"].'"><button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="zmdi zmdi-delete"></i></button></a> </td>';
                               echo '</tr>';
                             }
                           }
@@ -68,13 +63,14 @@
 
 
                         if (empty($_POST['search'])){
-                        $dados =mysqli_query($conn,"SELECT nome, apelido, nif  FROM trabalhadores where tipouser = 0");
+                        $dados =mysqli_query($conn,"SELECT idtrabalhador, nome, apelido, nif  FROM trabalhadores where tipouser = 0");
 
                           while ($row=mysqli_fetch_assoc($dados)){
                             echo '<tr>';
                             echo '<td>'. $row['nome']. '</td>';
                             echo '<td>'. $row['apelido']. '</td>';
                             echo '<td>'. $row['nif']. '</td>';
+                            echo '<td style="padding: 12px 20px;"><a href="admin.php?an=8&ann=1&idtrabalhador='.$row["idtrabalhador"].'"><button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="zmdi zmdi-delete"></i></button></a> </td>';
                             echo '</tr>';
                           }
                         }
@@ -87,4 +83,14 @@
             </table>
         </div>
     </div>
+</div>
+<div class="">
+  <?php
+  @$ann = $_REQUEST["ann"];
+   switch ($ann) {
+     case '1':
+       include 'apagaruser.php';
+       break;
+   }
+   ?>
 </div>
