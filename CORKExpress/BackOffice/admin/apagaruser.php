@@ -11,7 +11,10 @@ $(document).ready(function(){
             return false;
            });
         }else{
-        	$("#99").hide();
+          $(document).on('submit', '#my-form', function() {
+           $("#99").hide();
+           return true;
+          });
         }
     });
 });
