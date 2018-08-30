@@ -1,4 +1,3 @@
-ss="row">
     <div class="col-lg-9" style="max-width:100%;">
         <div class="table-responsive table--no-card m-b-30">
             <table class="table table-borderless table-striped table-earning">
