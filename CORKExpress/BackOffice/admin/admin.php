@@ -93,7 +93,16 @@
                           </ul>
                       </li>
                         <li>
-                            <a href="?an=5"><i class="fas fa-euro"></i>Salario</a>
+                            <a class="js-arrow"  href="#">
+                              <i class="fas fa-euro"></i>Salario</a>
+                              <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="?an=5">Inserir</a>
+                                </li>
+                                <li>
+                                  <a href="?an=9">Listar</a>
+                                </li>
+                            </ul>
                         </li>
                         <li>
                             <a href="?an=8">
@@ -314,6 +323,12 @@
                       break;
                      case '8':
                       include 'an8.php';
+                      break;
+                     case '9':
+                      include 'an9.php';
+                      break;
+                     case '10':
+                      include 'an10.php';
                       break;
                    }
                    ?>
