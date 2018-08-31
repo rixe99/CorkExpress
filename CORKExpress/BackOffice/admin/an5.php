@@ -71,6 +71,7 @@
                 </div>
             </div>
             <?php
+            include '../../connect/conn.php';
             if ($_GET['myvariable'] == "Mensal") {
               echo '
                 <div class="row form-group">
@@ -102,20 +103,12 @@
                                 <label for="select" class=" form-control-label">Mes</label>
                             </div>
                             <div class="col-12 col-md-4">
-                                <select name="mes" id="select" class="form-control">
-                                  <option value="1">Janeiro</option>
-                                  <option value="2">Fevereiro</option>
-                                  <option value="3">Março</option>
-                                  <option value="4">Abril</option>
-                                  <option value="5">Maio</option>
-                                  <option value="6">Junho</option>
-                                  <option value="7">Julho</option>
-                                  <option value="8">Agosto</option>
-                                  <option value="9">Setembro</option>
-                                  <option value="10">Outubro</option>
-                                  <option value="11">Novembro</option>
-                                  <option value="12">Dezembro</option>
-                                     ';
+                                <select name="mes" id="select" class="form-control">';
+                                $messes =mysqli_query($conn,"SELECT numero_mes, mes FROM mes ");
+                                  while ($row=mysqli_fetch_assoc($messes)){
+                                    echo '<option value="'.$row['numero_mes'].'">'.$row['mes'].'</option>';
+
+                                  }
                                      if(isset($_POST['mes'])){
                                        $mes=$_POST['mes'];
                                      }  echo'
@@ -154,20 +147,11 @@
                                   <label for="select" class=" form-control-label">Mes</label>
                               </div>
                               <div class="col-12 col-md-4">
-                                  <select name="mes" id="select" class="form-control">
-                                    <option value="1">Janeiro</option>
-                                    <option value="2">Fevereiro</option>
-                                    <option value="3">Março</option>
-                                    <option value="4">Abril</option>
-                                    <option value="5">Maio</option>
-                                    <option value="6">Junho</option>
-                                    <option value="7">Julho</option>
-                                    <option value="8">Agosto</option>
-                                    <option value="9">Setembro</option>
-                                    <option value="10">Outubro</option>
-                                    <option value="11">Novembro</option>
-                                    <option value="12">Dezembro</option>
-                                       ';
+                                  <select name="mes" id="select" class="form-control">';
+                                  $messes =mysqli_query($conn,"SELECT numero_mes, mes FROM mes");
+                                    while ($row=mysqli_fetch_assoc($messes)){
+                                      echo '<option value="'.$row['numero_mes'].'">'.$row['mes'].'</option>';
+                                    }
                                        if(isset($_POST['mes'])){
                                          $mes=$_POST['mes'];
                                        }  echo'
@@ -206,9 +190,11 @@
                                     <label for="select" class=" form-control-label">Mes</label>
                                 </div>
                                 <div class="col-12 col-md-4">
-                                    <select name="mes" id="select" class="form-control">
-                                      <option value="11">Novembro</option>
-                                         ';
+                                    <select name="mes" id="select" class="form-control">';
+                                    $messes =mysqli_query($conn,"SELECT numero_mes, mes FROM mes WHERE numero_mes = 11");
+                                      while ($row=mysqli_fetch_assoc($messes)){
+                                        echo '<option value="'.$row['numero_mes'].'">'.$row['mes'].'</option>';
+                                      }
                                          if(isset($_POST['mes'])){
                                            $mes=$_POST['mes'];
                                          }  echo'
