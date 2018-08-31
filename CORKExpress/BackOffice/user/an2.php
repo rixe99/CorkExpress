@@ -22,7 +22,7 @@
                   //    $dados = mysqli_query($conn, "SELECT nif FROM trabalhadores  WHERE idtrabalhador=$_SESSION[idtrabalhador]");
 
                         while ($row=mysqli_fetch_assoc($dados)){
-                          $messes =mysqli_fetch_array(mysqli_query($conn,"SELECT numero_mes, mes FROM mes WHERE numero_mes = '$row[mes]'"));
+                          $messes = mysqli_fetch_array(mysqli_query($conn,"SELECT numero_mes, mes FROM mes WHERE numero_mes = '$row[mes]'"));
                           echo '<tr>';
                           echo '<td style="padding: 12px 20px;">'. $row['nif']. '</td>';
                           echo '<td style="padding: 12px 20px;">'. $row['ano']. '</td>';
