@@ -24,7 +24,7 @@
                     include '../../connect/conn.php';
                     $first_letter = substr($_POST['search'], 0, 1);
                     if (empty($_POST['search'])){
-                    $dados =mysqli_query($conn,"SELECT idtrabalhador, nome, apelido, nif  FROM trabalhadores where tipouser = 0");
+                    $dados =mysqli_query($conn,"SELECT idtrabalhador, nome, apelido, nif  FROM trabalhadores where tipouser = 0 ORDER BY nome");
 
                       while ($row=mysqli_fetch_assoc($dados)){
                         echo '<tr>';
