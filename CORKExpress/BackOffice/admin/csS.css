@@ -123,7 +123,7 @@ top:10px;
   background-color: rgba(229, 229, 229, 1);
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 1);
     position: relative;
-    top: -200px;
+    top: -240px;
     left: 500px;
 }
 .contentcos2{
@@ -135,7 +135,15 @@ top:10px;
     top: -280px;
     left: 500px;
 }
-
+.contentcos3{
+  width: 850px;
+  height: auto;
+  background-color: rgba(229, 229, 229, 1);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 1);
+    position: relative;
+    top: -240px;
+    left: 500px;
+}
 
 
 div.pager {
@@ -143,4 +151,10 @@ div.pager {
   margin: 0em 0;
    position: relative;
    top: 4px;
+}
+
+.moveallemails{
+  position: relative;
+  top:-1000px;
+  left: 40px;
 }

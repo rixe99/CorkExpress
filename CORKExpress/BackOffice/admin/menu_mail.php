@@ -21,12 +21,14 @@
 $(document).ready(function(){
   $("#5000").hide();
   $("#5001").hide();
+  $("#5002").hide();
   $("#5400").click(function(){
       $("#5437").removeClass("active");
       $("#5438").removeClass("active");
       $("#5436").removeClass("active");
       $("#5000").show();
       $("#5001").hide();
+      $("#5002").hide();
   });
 
     $("#5436").click(function(){
@@ -35,6 +37,7 @@ $(document).ready(function(){
         $("#5436").addClass("active");
         $("#5000").hide();
         $("#5001").show();
+        $("#5002").hide();
     });
     $("#5437").click(function(){
         $("#5436").removeClass("active");
@@ -42,6 +45,7 @@ $(document).ready(function(){
         $("#5437").addClass("active");
         $("#5000").hide();
         $("#5001").hide();
+        $("#5002").show();
     });
     $("#5438").click(function(){
         $("#5436").removeClass("active");
@@ -49,6 +53,7 @@ $(document).ready(function(){
         $("#5438").addClass("active");
         $("#5000").hide();
         $("#5001").hide();
+        $("#5002").hide();
     });
     $("#5439").click(function(){
         $("#5440").removeClass("active");
@@ -231,7 +236,7 @@ $(document).ready(function(){
     <script >
     $('table.paginated').each(function() {
         var currentPage = 0;
-        var numPerPage = 6;
+        var numPerPage = 10;
         var $table = $(this);
         $table.bind('repaginate', function() {
             $table.find('tbody tr').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();
@@ -251,25 +256,6 @@ $(document).ready(function(){
         }
         $pager.insertBefore("#btscryp").find('button.btn btn-default btn-sm:first').addClass('active');
     });
-    </script>
-    <script>
-    function myFunction() {
-      var input, filter, table, tr, td, i;
-      input = document.getElementById("myInput");
-      filter = input.value.toUpperCase();
-      table = document.getElementById("myTable");
-      tr = table.getElementsByTagName("tr");
-      for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        if (td) {
-          if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-          } else {
-            tr[i].style.display = "none";
-          }
-        }
-      }
-    }
     </script>
     </div>
     <!--  -->
@@ -337,6 +323,178 @@ $(document).ready(function(){
         </div>
       </section>
     </div>
+    <div class="contentcos3" id="5002">
+      <section class="content">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="box box-primary" style="width: 800px; position:relative;top: 10px;left: 10px;">
+              <div class="box-header with-border">
+                <h3 class="box-title">Inbox</h3>
+                <br><br>
+              <div class="box-body no-padding">
+                <div class="table-responsive mailbox-messages">
+                  <table id ="myTable" class="table table-hover table-striped paginated2">
+                    <tbody>
+                    <tr>
+                      <td class="mailbox-star"><a href=""><i class="fa fa-star text-yellow"></i></a></td>
+                      <td class="mailbox-name"><a href="">Alexander Pierce</a></td>
+                      <td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...</td>
+                      <td class="mailbox-date">11 hours ago</td>
+                    </tr>
+                    <tr>
+                      <td class="mailbox-star"><a href=""><i class="fa fa-star text-yellow"></i></a></td>
+                      <td class="mailbox-name"><a href="">Alexander Pierce</a></td>
+                      <td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...</td>
+                      <td class="mailbox-date">11 hours ago</td>
+                    </tr>
+                    <tr>
+                      <td class="mailbox-star"><a href=""><i class="fa fa-star text-yellow"></i></a></td>
+                      <td class="mailbox-name"><a href="">Alexander Pierce</a></td>
+                      <td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...</td>
+                      <td class="mailbox-date">11 hours ago</td>
+                    </tr>
+                    <tr>
+                      <td class="mailbox-star"><a href=""><i class="fa fa-star text-yellow"></i></a></td>
+                      <td class="mailbox-name"><a href="">Alexander Pierce</a></td>
+                      <td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...</td>
+                      <td class="mailbox-date">11 hours ago</td>
+                    </tr>
+                    <tr>
+                      <td class="mailbox-star"><a href=""><i class="fa fa-star text-yellow"></i></a></td>
+                      <td class="mailbox-name"><a href="">Alexander Pierce</a></td>
+                      <td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...</td>
+                      <td class="mailbox-date">11 hours ago</td>
+                    </tr>
+                    <tr>
+                      <td class="mailbox-star"><a href=""><i class="fa fa-star text-yellow"></i></a></td>
+                      <td class="mailbox-name"><a href="">Alexander Pierce</a></td>
+                      <td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...</td>
+                      <td class="mailbox-date">11 hours ago</td>
+                    </tr>
+                    <tr>
+                      <td class="mailbox-star"><a href=""><i class="fa fa-star text-yellow"></i></a></td>
+                      <td class="mailbox-name"><a href="">Alexander Pierce</a></td>
+                      <td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...</td>
+                      <td class="mailbox-date">11 hours ago</td>
+                    </tr>
+                    <tr>
+                      <td class="mailbox-star"><a href=""><i class="fa fa-star text-yellow"></i></a></td>
+                      <td class="mailbox-name"><a href="">Alexander Pierce</a></td>
+                      <td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...</td>
+                      <td class="mailbox-date">11 hours ago</td>
+                    </tr>
+                    <tr>
+                      <td class="mailbox-star"><a href=""><i class="fa fa-star text-yellow"></i></a></td>
+                      <td class="mailbox-name"><a href="">Alexander Pierce</a></td>
+                      <td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...</td>
+                      <td class="mailbox-date">11 hours ago</td>
+                    </tr>
+                    <tr>
+                      <td class="mailbox-star"><a href=""><i class="fa fa-star text-yellow"></i></a></td>
+                      <td class="mailbox-name"><a href="">Alexander Pierce</a></td>
+                      <td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...</td>
+                      <td class="mailbox-date">11 hours ago</td>
+                    </tr>
+                    <tr>
+                      <td class="mailbox-star"><a href=""><i class="fa fa-star text-yellow"></i></a></td>
+                      <td class="mailbox-name"><a href="">Alexander Pierce</a></td>
+                      <td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...</td>
+                      <td class="mailbox-date">11 hours ago</td>
+                    </tr>
+                    <tr>
+                      <td class="mailbox-star"><a href=""><i class="fa fa-star text-yellow"></i></a></td>
+                      <td class="mailbox-name"><a href="">Alexander Pierce</a></td>
+                      <td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...</td>
+                      <td class="mailbox-date">11 hours ago</td>
+                    </tr>
+                    <tr>
+                      <td class="mailbox-star"><a href=""><i class="fa fa-star text-yellow"></i></a></td>
+                      <td class="mailbox-name"><a href="">Alexander Pierce</a></td>
+                      <td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...</td>
+                      <td class="mailbox-date">11 hours ago</td>
+                    </tr>
+                    <tr>
+                      <td class="mailbox-star"><a href=""><i class="fa fa-star text-yellow"></i></a></td>
+                      <td class="mailbox-name"><a href="">Alexander Pierce</a></td>
+                      <td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...</td>
+                      <td class="mailbox-date">11 hours ago</td>
+                    </tr>
+                    <tr>
+                      <td class="mailbox-star"><a href=""><i class="fa fa-star text-yellow"></i></a></td>
+                      <td class="mailbox-name"><a href="">Alexander Pierce</a></td>
+                      <td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...</td>
+                      <td class="mailbox-date">11 hours ago</td>
+                    </tr>
+                    <tr>
+                      <td class="mailbox-star"><a href=""><i class="fa fa-star text-yellow"></i></a></td>
+                      <td class="mailbox-name"><a href="">Alexander Pierce</a></td>
+                      <td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...</td>
+                      <td class="mailbox-date">11 hours ago</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div id="btscryp2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </section>
+      </div>
+    <script >
+    $('table.paginated2').each(function() {
+        var currentPage = 0;
+        var numPerPage = 10;
+        var $table = $(this);
+        $table.bind('repaginate', function() {
+            $table.find('tbody tr').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();
+        });
+        $table.trigger('repaginate');
+        var numRows = $table.find('tbody tr').length;
+        var numPages = Math.ceil(numRows / numPerPage);
+        var $pager = $('<div class="pager"></div>');
+        for (var page = 0; page < numPages; page++) {
+            $('<button class="btn btn-default btn-sm"></button>').text(page + 1).bind('click', {
+                newPage: page
+            }, function(event) {
+                currentPage = event.data['newPage'];
+                $table.trigger('repaginate');
+                $(this).addClass('active').siblings().removeClass('active');
+            }).appendTo($pager).addClass('clickable');
+        }
+        $pager.insertBefore("#btscryp2").find('button.btn btn-default btn-sm:first').addClass('active');
+    });
+    </script>
+    </div>
   </div>
 
-<!-- Page Script -->
+    <div class="row">
+      <div class="col-lg-9" style="width:100%;">
+          <div class="table-responsive table--no-card m-b-30"style="overflow-x: hidden; width:650px">
+              <table class="table table-borderless table-striped table-earning">
+                  <thead style="display:block;">
+                      <tr>
+                          <th style="width:150px">Nome</th>
+                          <th style="width:150px">Apelido</th>
+                          <th style="width:150px">Email</th>
+                          <th style="width:150px">Categoria</th>
+                      </tr>
+                  </thead >
+                  <tbody style="display:block; overflow:scroll; height:160px;">
+                    <?php
+                      include '../../connect/conn.php';
+                        $dados =mysqli_query($conn,"SELECT nome, apelido, categoria, email FROM trabalhadores WHERE tipouser = 0 ORDER BY nome");
+                        while ($rows=mysqli_fetch_assoc($dados)){
+                          echo '<tr>';
+                          echo '<td style="width:150px">'. $rows['nome']. '</td>';
+                          echo '<td style="width:150px">'. $rows['apelido']. '</td>';
+                          echo '<td style="width:150px">'. $rows['email']. '</td>';
+                          echo '<td style="width:150px">'. $rows['categoria']. '</td>';
+                          echo '</tr>';
+                        }
+                     ?>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
