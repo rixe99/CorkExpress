@@ -321,7 +321,6 @@ $(document).ready(function(){
             </div>
           </div>
         </div>
-      </section>
     </div>
     <div class="contentcos3" id="5002">
       <section class="content">

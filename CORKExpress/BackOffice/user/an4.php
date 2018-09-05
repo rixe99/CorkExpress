@@ -58,7 +58,7 @@
 
             if($dados){
               while ($row=mysqli_fetch_assoc($dados)){
-              //  $messes = mysqli_fetch_array(mysqli_query($conn,"SELECT numero_mes, mes FROM mes WHERE numero_mes = '$row[mes]'"));
+                $messes = mysqli_fetch_array(mysqli_query($conn,"SELECT numero_mes, mes FROM mes WHERE numero_mes = '$row[mes]'"));
                 echo '<tr>';
                 echo '<td style="padding: 12px 20px;">'. $row['nome']. '</td>';
                 echo '<td style="padding: 12px 20px;">'. $row['apelido']. '</td>';
@@ -67,7 +67,7 @@
                 echo '<td style="padding: 12px 20px;">'. $row['categoria']. '</td>';
                 echo '<td style="padding: 12px 20px;">'. $row['nif']. '</td>';
                 echo '<td style="padding: 12px 20px;">'. $row['ano']. '</td>';
-                echo '<td style="padding: 12px 20px;">'. $row['mes']. '</td>';
+                echo '<td style="padding: 12px 20px;">'. $messes['mes']. '</td>';
                 echo '<td style="padding: 12px 20px;">'. $row['dias']. '</td>';
                 echo '<td style="padding: 12px 20px;">'. $row['salariobruto']. '</td>';
                 echo '<td style="padding: 12px 20px;">'. $row['salarioniss']. '</td>';
