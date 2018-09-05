@@ -86,9 +86,18 @@ validar();
                           <a class="js-arrow" href="#">
                               <i class="fas fa-tachometer-alt"></i>Admin</a>
                       </li>
-                        <li>
-                            <a href="?an=2"><i class="fas fa-euro"></i>Salario</a>
-                        </li>
+                      <li>
+                        <a class="js-arrow" href="#">
+                          <i class="fas fa-euro"></i>Salario</a>
+                          <ul class="list-unstyled navbar__sub-list js-sub-list">
+                            <li>
+                                <a href="?an=2">Lista</a>
+                            </li>
+                            <li>
+                                <a href="?an=4">Recibos</a>
+                            </li>
+                        </ul>
+                    </li>
                         <li>
                             <a href="#"><i class="fas fa-ban"></i>Despedir</a>
                         </li>
