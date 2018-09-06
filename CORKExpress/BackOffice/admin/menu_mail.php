@@ -22,6 +22,8 @@ $(document).ready(function(){
   $("#5000").hide();
   $("#5001").hide();
   $("#5002").hide();
+  $("#5003").hide();
+
   $("#5400").click(function(){
       $("#5437").removeClass("active");
       $("#5438").removeClass("active");
@@ -59,13 +61,32 @@ $(document).ready(function(){
         $("#5440").removeClass("active");
         $("#5441").removeClass("active");
         $("#5439").addClass("active");
+        $("#5003").show();
     });
     $("#5440").click(function(){
         $("#5439").removeClass("active");
         $("#5441").removeClass("active");
         $("#5440").addClass("active");
+        $("#5003").hide();
     });
-
+    $("#4999").click(function(){
+        $ho = "hencanacao@pp.oo";
+        $to = $('#compose-to').val();
+        $sub = $('#compose-sub').val();
+        $save = $('#compose-textarea').html();
+          $.ajax({
+            url: 'save_email.php',
+            type: 'post',
+            data: {text: $save, destinatario: $to, assunto: $sub, remetente: $ho},
+            datatype: 'html',
+            success: function(stre){
+            alert(stre);
+            if(stre != "Não existe o email do destinatario"){
+              window.location.href = "admin.php?an=11";
+            }
+          }
+          });
+    });
 });
 </script>
 <section class="content mvct">
@@ -271,10 +292,10 @@ $(document).ready(function(){
               <!-- /.box-header -->
               <div class="box-body">
                 <div class="form-group">
-                  <input class="form-control" placeholder="To:">
+                  <input id="compose-to" class="form-control" placeholder="To:">
                 </div>
                 <div class="form-group">
-                  <input class="form-control" placeholder="Subject:">
+                  <input id="compose-sub" class="form-control" placeholder="Subject:">
                 </div>
                 <ul class="wysihtml5-toolbar">
                   <li>
@@ -314,7 +335,7 @@ $(document).ready(function(){
                 </div>
                 <div class="box-footer">
                   <div class="pull-right">
-                    <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send</button>
+                    <button id="4999" type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send</button>
                   </div>
                 </div>
               </div>
@@ -464,36 +485,35 @@ $(document).ready(function(){
         $pager.insertBefore("#btscryp2").find('button.btn btn-default btn-sm:first').addClass('active');
     });
     </script>
-    </div>
   </div>
-
-    <div class="row">
-      <div class="col-lg-9" style="width:100%;">
-          <div class="table-responsive table--no-card m-b-30"style="overflow-x: hidden; width:650px">
-              <table class="table table-borderless table-striped table-earning">
-                  <thead style="display:block;">
-                      <tr>
-                          <th style="width:150px">Nome</th>
-                          <th style="width:150px">Apelido</th>
-                          <th style="width:150px">Email</th>
-                          <th style="width:150px">Categoria</th>
-                      </tr>
-                  </thead >
-                  <tbody style="display:block; overflow:scroll; height:160px;">
-                    <?php
-                      include '../../connect/conn.php';
-                        $dados =mysqli_query($conn,"SELECT nome, apelido, categoria, email FROM trabalhadores WHERE tipouser = 0 ORDER BY nome");
-                        while ($rows=mysqli_fetch_assoc($dados)){
-                          echo '<tr>';
-                          echo '<td style="width:150px">'. $rows['nome']. '</td>';
-                          echo '<td style="width:150px">'. $rows['apelido']. '</td>';
-                          echo '<td style="width:150px">'. $rows['email']. '</td>';
-                          echo '<td style="width:150px">'. $rows['categoria']. '</td>';
-                          echo '</tr>';
-                        }
-                     ?>
-                  </tbody>
-              </table>
+        <div id="5003" class="row" style="position:relative;top:-1000px;left: 40px;z-index: 1;">
+          <div class="col-lg-9" style="width:100%;">
+              <div class="table-responsive table--no-card m-b-30"style="overflow-x: hidden; width:600px">
+                  <table class="table table-borderless table-striped table-earning">
+                      <thead style="display:block;">
+                          <tr>
+                              <th style="width:150px">Nome</th>
+                              <th style="width:150px">Apelido</th>
+                              <th style="width:150px">Email</th>
+                              <th style="width:150px">Categoria</th>
+                          </tr>
+                      </thead >
+                      <tbody style="display:block; overflow:scroll; height:160px;">
+                        <?php
+                          include '../../connect/conn.php';
+                            $dados =mysqli_query($conn,"SELECT nome, apelido, categoria, email FROM trabalhadores WHERE tipouser = 0 ORDER BY nome");
+                            while ($rows=mysqli_fetch_assoc($dados)){
+                              echo '<tr>';
+                              echo '<td style="width:150px">'. $rows['nome']. '</td>';
+                              echo '<td style="width:150px">'. $rows['apelido']. '</td>';
+                              echo '<td style="width:150px">'. $rows['email']. '</td>';
+                              echo '<td style="width:150px">'. $rows['categoria']. '</td>';
+                              echo '</tr>';
+                            }
+                         ?>
+                      </tbody>
+                  </table>
+              </div>
           </div>
       </div>
   </div>
