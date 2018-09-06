@@ -1,5 +1,7 @@
 <?php
 require_once '../funcoes/funcoes.php'
+session_start();
+confirma();
  ?>
 
 <!DOCTYPE html>

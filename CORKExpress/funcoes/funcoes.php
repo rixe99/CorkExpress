@@ -21,6 +21,7 @@ function login($username,$password){
         $_SESSION["idtrabalhador"] = $a["idtrabalhador"];
         $_SESSION["tipouser"] = $a["tipouser"];
         $_SESSION["username"] = $a["username"];
+        $_SESSION["logo"]=1;
         //Encaminhar utilizador para painel admin
         if($a["tipouser"]==1){
           echo '<meta http-equiv="refresh"
@@ -40,4 +41,17 @@ function login($username,$password){
       echo '<meta http-equiv="refresh" content="0;url=Login.php">';
     }
   }
+
+
+  function confirma(){
+    if (@$_SESSION["logo"]==1){
+      if(@$_SESSION["tipouser"]==0){
+        echo '<meta http-equiv="refresh" content="0;url=user/user.php">';
+      }
+      if(@$_SESSION["tipouser"]==1){
+        echo '<meta http-equiv="refresh" content="0;url=admin/admin.php">';
+      }
+    }
+  }
+
  ?>
