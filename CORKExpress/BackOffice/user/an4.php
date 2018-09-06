@@ -55,41 +55,6 @@
               </button>
           </div>
         </form>
-<<<<<<< HEAD
-=======
-
-        <?php
-          if(isset($_POST["insere"])){
-            include '../../connect/conn.php';
-            $dados = mysqli_query($conn, "SELECT nome, apelido, dias, nib, categoria, salario.nif, trabalhadores.nif, ano, mes, dias, salariobruto, salarioniss, salarioirs, salariofinal, turno, tipo FROM salario RIGHT JOIN trabalhadores ON salario.nif=trabalhadores.nif WHERE idtrabalhador=$_SESSION[idtrabalhador] AND mes=$_POST[mes]");
-
-            if($dados){
-              while ($row=mysqli_fetch_assoc($dados)){
-                $messes = mysqli_fetch_array(mysqli_query($conn,"SELECT numero_mes, mes FROM mes WHERE numero_mes = '$row[mes]'"));
-                echo '<tr>';
-                echo '<td style="padding: 12px 20px;">'. $row['nome']. '</td>';
-                echo '<td style="padding: 12px 20px;">'. $row['apelido']. '</td>';
-                echo '<td style="padding: 12px 20px;">'. $row['dias']. '</td>';
-                echo '<td style="padding: 12px 20px;">'. $row['nib']. '</td>';
-                echo '<td style="padding: 12px 20px;">'. $row['categoria']. '</td>';
-                echo '<td style="padding: 12px 20px;">'. $row['nif']. '</td>';
-                echo '<td style="padding: 12px 20px;">'. $row['ano']. '</td>';
-                echo '<td style="padding: 12px 20px;">'. $messes['mes']. '</td>';
-                echo '<td style="padding: 12px 20px;">'. $row['dias']. '</td>';
-                echo '<td style="padding: 12px 20px;">'. $row['salariobruto']. '</td>';
-                echo '<td style="padding: 12px 20px;">'. $row['salarioniss']. '</td>';
-                echo '<td style="padding: 12px 20px;">'. $row['salarioirs']. '</td>';
-                echo '<td style="padding: 12px 20px;">'. $row['salariofinal']. '</td>';
-                echo '<td style="padding: 12px 20px;">'. $row['turno']. '</td>';
-                echo '<td style="padding: 12px 20px;">'. $row['tipo']. '</td>';
-              //s  echo '<td style="padding: 12px 20px;"><a href="admin.php?editar='.$row["idtrabalhador"].'&an=6"><button>Editar</button></a></td>';
-                echo '</tr>';
-              }
-            }
-
-          }
-           ?>
->>>>>>> 31dd80cbbbccd89a71c52bd25aecf6e5d1a6d750
       </div>
   </div>
 <center>
