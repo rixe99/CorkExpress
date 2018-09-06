@@ -75,7 +75,6 @@
                 echo '<td style="padding: 12px 20px;">'. $row['salariofinal']. '</td>';
                 echo '<td style="padding: 12px 20px;">'. $row['turno']. '</td>';
                 echo '<td style="padding: 12px 20px;">'. $row['tipo']. '</td>';
-
               //s  echo '<td style="padding: 12px 20px;"><a href="admin.php?editar='.$row["idtrabalhador"].'&an=6"><button>Editar</button></a></td>';
                 echo '</tr>';
               }
