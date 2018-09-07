@@ -38,7 +38,7 @@ function login($username,$password){
 
   function validar(){
     if(!$_SESSION["idtrabalhador"]){
-      echo '<meta http-equiv="refresh" content="0;url=Login.php">';
+      echo '<meta http-equiv="refresh" content="0;url=../Login.php">';
     }
   }
 

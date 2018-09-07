@@ -64,7 +64,7 @@ $(document).ready(function(){
         $("#5003").show();
         $tipo = 0;
         $.ajax({
-            url:"listuser.php",
+            url:"menu_AllEmails.php",
             method:"POST",
             data: {tipo: $tipo},
             success:function(data){

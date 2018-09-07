@@ -10,8 +10,8 @@
        while ($rows=mysqli_fetch_assoc($dados)){
          $output .= '
          <tr>
-           <td class="mailbox-star"><a href=""><i class="fa fa-star text-yellow"></i></a></td>
-           <td class="mailbox-name"><a href="">Alexander Pierce</a></td>
+           <td class="mailbox-star"><a href=""><i class="fa fa-trash-o"></i></a></td>
+           <td class="mailbox-name"><a href="">'.$dados['nome'].'  '.$dados['apelido'].'</a></td>
            <td class="mailbox-subject"><b>AdminLTE 2.0 Issue</b> - Trying to find a solution to this problem...</td>
            <td class="mailbox-date">11 hours ago</td>
          </tr>';
