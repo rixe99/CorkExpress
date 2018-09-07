@@ -62,12 +62,30 @@ $(document).ready(function(){
         $("#5441").removeClass("active");
         $("#5439").addClass("active");
         $("#5003").show();
+        $tipo = 0;
+        $.ajax({
+            url:"listuser.php",
+            method:"POST",
+            data: {tipo: $tipo},
+            success:function(data){
+              $('#live_data').html(data);
+            }
+        });
     });
     $("#5440").click(function(){
         $("#5439").removeClass("active");
         $("#5441").removeClass("active");
         $("#5440").addClass("active");
-        $("#5003").hide();
+        $("#5003").show();
+        $tipo = 1;
+        $.ajax({
+            url:"menu_AllEmails.php",
+            method:"POST",
+            data: {tipo: $tipo},
+            success:function(data){
+              $('#live_data').html(data);
+            }
+        });
     });
     $("#4999").click(function(){
         $ho = "hencanacao@pp.oo";
@@ -498,19 +516,8 @@ $(document).ready(function(){
                               <th style="width:150px">Categoria</th>
                           </tr>
                       </thead >
-                      <tbody style="display:block; overflow:scroll; height:160px;">
-                        <?php
-                          include '../../connect/conn.php';
-                            $dados =mysqli_query($conn,"SELECT nome, apelido, categoria, email FROM trabalhadores WHERE tipouser = 0 ORDER BY nome");
-                            while ($rows=mysqli_fetch_assoc($dados)){
-                              echo '<tr>';
-                              echo '<td style="width:150px">'. $rows['nome']. '</td>';
-                              echo '<td style="width:150px">'. $rows['apelido']. '</td>';
-                              echo '<td style="width:150px">'. $rows['email']. '</td>';
-                              echo '<td style="width:150px">'. $rows['categoria']. '</td>';
-                              echo '</tr>';
-                            }
-                         ?>
+                      <tbody style="display:block; overflow:scroll; height:160px;" id="live_data">
+
                       </tbody>
                   </table>
               </div>
