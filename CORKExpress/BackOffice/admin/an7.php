@@ -74,8 +74,8 @@
         if(isset($_POST['insere'])){
           include '../../connect/conn.php';
           $user=mysqli_fetch_array(mysqli_query($conn,"SELECT username FROM trabalhadores WHERE username='$_POST[username]' AND idtrabalhador!='$editar' " ));
-          $pass=mysqli_fetch_array(mysqli_query($conn,"SELECT password FROM trabalhadores WHERE password='$_POST[password]' AND idtrabalhador!='$editar' " ));
-          if(!$user && !$pass){
+          $email=mysqli_fetch_array(mysqli_query($conn,"SELECT email FROM trabalhadores WHERE email='$_POST[email]' AND idtrabalhador!='$editar' " ));
+          if(!$user && !$email){
             include '../../connect/conn.php';
             mysqli_query($conn,"UPDATE trabalhadores SET nome='$_POST[nome]', apelido='$_POST[apelido]', email='$_POST[email]', categoria='$_POST[categoria]', username='$_POST[username]', password='$_POST[password]' WHERE idtrabalhador='$editar'");
             echo '<meta http-equiv="refresh"
@@ -85,8 +85,8 @@
             if($user){
               echo 'Ja tem user';
             }
-            if($pass){
-              echo'Ja tem pass';
+            if($email){
+              echo'Ja tem email';
             }
           }
         }
