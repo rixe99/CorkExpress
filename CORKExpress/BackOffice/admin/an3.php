@@ -70,9 +70,9 @@
         if(isset($_POST["insere"])){
           include '../../connect/conn.php';
           $user=mysqli_fetch_array(mysqli_query($conn,"SELECT username FROM trabalhadores WHERE username='$_POST[username]'" ));
-          $pass=mysqli_fetch_array(mysqli_query($conn,"SELECT password FROM trabalhadores WHERE password='$_POST[password]'" ));
+          $email=mysqli_fetch_array(mysqli_query($conn,"SELECT email FROM trabalhadores WHERE email='$_POST[email]'" ));
 
-          if(!$user && !$pass ){
+          if(!$user && !$email ){
             mysqli_query($conn, "INSERT INTO trabalhadores (nome, apelido, categoria, email, password, username, tipouser ) VALUES ('$_POST[nome]', '$_POST[apelido]','$_POST[categoria]', '$_POST[email]', '$_POST[password]', '$_POST[username]', 1) ");
             echo 'sucesso';
           include '../../connect/deconn.php';
@@ -81,8 +81,8 @@
               if($user){
                 echo 'Ja tem user';
               }
-              if($pass){
-                echo'Ja tem pass';
+              if($email){
+                echo'Ja tem email';
               }
 
             }
