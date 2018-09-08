@@ -104,8 +104,8 @@
         if(isset($_POST["update"])){
           include '../../connect/conn.php';
           $user=mysqli_fetch_array(mysqli_query($conn,"SELECT username FROM trabalhadores WHERE username='$_POST[username]' and idtrabalhador !='$editar'"));
-          $pass=mysqli_fetch_array(mysqli_query($conn,"SELECT password FROM trabalhadores WHERE password='$_POST[password]' and idtrabalhador !='$editar'"));
-          if(!$user && !$pass ){
+          $email=mysqli_fetch_array(mysqli_query($conn,"SELECT email FROM trabalhadores WHERE email='$_POST[email]' and idtrabalhador !='$editar'"));
+          if(!$user && !$email ){
             mysqli_query($conn, "UPDATE trabalhadores SET morada = '$_POST[morada]', email = '$_POST[email]', password = '$_POST[password]', username = '$_POST[username]' WHERE idtrabalhador = '$editar'");
             echo 'sucesso';
             echo '<meta http-equiv="refresh"
@@ -116,8 +116,8 @@
               if($user){
                 echo 'Ja tem user';
               }
-              if($pass){
-                echo'Ja tem pass';
+              if($email){
+                echo'Ja tem email';
               }
           }
         }
