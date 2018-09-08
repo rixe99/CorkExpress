@@ -112,11 +112,11 @@
             else {
               include '../../connect/conn.php';
               $user=mysqli_fetch_array(mysqli_query($conn,"SELECT username FROM trabalhadores WHERE username='$_POST[username]'" ));
-              $pass=mysqli_fetch_array(mysqli_query($conn,"SELECT password FROM trabalhadores WHERE password='$_POST[password]'" ));
+              $email=mysqli_fetch_array(mysqli_query($conn,"SELECT email FROM trabalhadores WHERE email='$_POST[email]'" ));
               $nib=mysqli_fetch_array(mysqli_query($conn,"SELECT nib FROM trabalhadores WHERE nib='$_POST[nib]'" ));
               $niss=mysqli_fetch_array(mysqli_query($conn,"SELECT niss FROM trabalhadores WHERE niss='$_POST[niss]'" ));
               $nif=mysqli_fetch_array(mysqli_query($conn,"SELECT nif FROM trabalhadores WHERE nif='$_POST[nif]'" ));
-              if(!$user && !$pass && !$nib && !$niss && !$nif){
+              if(!$user && !$email && !$nib && !$niss && !$nif){
                 mysqli_query($conn, "INSERT INTO trabalhadores (nome, apelido, nif, nib, niss ,categoria, morada, email, password, username, tipouser ) VALUES ('$_POST[nome]', '$_POST[apelido]', '$_POST[nif]', '$_POST[nib]', '$_POST[niss]','$_POST[categoria]', '$_POST[morada]', '$_POST[email]', '$_POST[password]', '$_POST[username]', 0) ");
                 echo 'sucesso';
               include '../../connect/deconn.php';
@@ -125,8 +125,8 @@
                   if($user){
                     echo 'Ja tem user';
                   }
-                  if($pass){
-                    echo'Ja tem pass';
+                  if($email){
+                    echo'Ja tem email';
                   }
                   if($nib){
                     echo'Ja tem nib';
