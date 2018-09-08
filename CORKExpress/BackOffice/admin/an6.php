@@ -129,11 +129,11 @@
         if(isset($_POST["update"])){
           include '../../connect/conn.php';
           $user=mysqli_fetch_array(mysqli_query($conn,"SELECT username FROM trabalhadores WHERE username='$_POST[username]' and idtrabalhador !='$editar'"));
-          $pass=mysqli_fetch_array(mysqli_query($conn,"SELECT password FROM trabalhadores WHERE password='$_POST[password]' and idtrabalhador !='$editar'"));
+          $email=mysqli_fetch_array(mysqli_query($conn,"SELECT email FROM trabalhadores WHERE email='$_POST[email]' and idtrabalhador !='$editar'"));
           $nib=mysqli_fetch_array(mysqli_query($conn,"SELECT nib FROM trabalhadores WHERE nib='$_POST[nib]' and idtrabalhador !='$editar'"));
           $niss=mysqli_fetch_array(mysqli_query($conn,"SELECT niss FROM trabalhadores WHERE niss='$_POST[niss]' and idtrabalhador !='$editar'"));
           $nif=mysqli_fetch_array(mysqli_query($conn,"SELECT nif FROM trabalhadores WHERE nif='$_POST[nif]' and idtrabalhador !='$editar'"));
-          if(!$user && !$pass && !$nib && !$niss && !$nif){
+          if(!$user && !$email && !$nib && !$niss && !$nif){
             mysqli_query($conn, "UPDATE trabalhadores SET nome = '$_POST[nome]', apelido = '$_POST[apelido]', nif = '$_POST[nif]', nib = '$_POST[nib]', niss = '$_POST[niss]', categoria = '$_POST[categoria]', morada = '$_POST[morada]', email = '$_POST[email]',password = '$_POST[password]', username = '$_POST[username]' WHERE idtrabalhador = '$editar'");
             echo 'sucesso';
             echo '<meta http-equiv="refresh"
@@ -144,8 +144,8 @@
               if($user){
                 echo 'Ja tem user';
               }
-              if($pass){
-                echo'Ja tem pass';
+              if($email){
+                echo'Ja tem email';
               }
               if($nib){
                 echo'Ja tem nib';
