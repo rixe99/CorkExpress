@@ -190,8 +190,10 @@ validar();
                       break;
                     case '11':
                       include 'menu_mail.php';
-
                       break;
+                    case '12':
+                      include 'an12.php';  
+                    break;
                    }
                    ?>
                 </div>
