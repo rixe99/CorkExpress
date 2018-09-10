@@ -361,6 +361,8 @@ $(document).ready(function(){
       $("#5002").hide();
       $("#5003").hide();
       $("#5005").show();
+      $("#5437").removeClass("active");
+      $("#5436").removeClass("active");
       $("#5439").removeClass("active");
       $("#5440").removeClass("active");
       $('#5003').attr('id', 'no_id');
