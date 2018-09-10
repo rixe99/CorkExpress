@@ -91,6 +91,9 @@ validar();
                                 <li>
                                   <a href="?an=9">Listar</a>
                                 </li>
+                                <li>
+                                  <a href="?an=12">Gastos</a>
+                                </li>
                             </ul>
                         </li>
                         <li>
@@ -192,7 +195,7 @@ validar();
                       include 'menu_mail.php';
                       break;
                     case '12':
-                      include 'an12.php';  
+                      include 'an12.php';
                     break;
                    }
                    ?>
