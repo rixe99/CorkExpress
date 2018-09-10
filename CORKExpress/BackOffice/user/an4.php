@@ -46,14 +46,6 @@
                   </div>
               </div>
 
-          <div class="card-footer">
-              <button type="submit" name="update" class="btn btn-primary btn-sm">
-                  <i class="fa fa-dot-circle-o"></i> Update
-              </button>
-              <button type="reset" class="btn btn-danger btn-sm">
-                  <i class="fa fa-ban"></i> Reset
-              </button>
-          </div>
         </form>
       </div>
   </div>

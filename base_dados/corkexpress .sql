@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 03-Set-2018 às 14:51
+-- Generation Time: 10-Set-2018 às 04:19
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -21,19 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `corkexpress`
 --
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `admin`
---
-
-CREATE TABLE `admin` (
-  `idadmin` int(11) NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
-  `tipouser` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -73,14 +60,22 @@ INSERT INTO `mes` (`id_mes`, `numero_mes`, `mes`) VALUES
 
 CREATE TABLE `notificacoes` (
   `idnotifics` int(11) NOT NULL,
-  `assunto` text NOT NULL,
-  `texto` text NOT NULL,
-  `data` date NOT NULL,
+  `assunto` varchar(100) NOT NULL,
+  `texto` varchar(5000) NOT NULL,
   `estado` int(11) NOT NULL,
-  `tipo_notifics` int(11) NOT NULL,
-  `idremetente` int(11) NOT NULL,
-  `iddestinatario` int(11) NOT NULL
+  `hours_notifics` varchar(40) NOT NULL,
+  `emailremetente` varchar(100) NOT NULL,
+  `emaildestinatario` varchar(100) NOT NULL,
+  `data_envio` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `notificacoes`
+--
+
+INSERT INTO `notificacoes` (`idnotifics`, `assunto`, `texto`, `estado`, `hours_notifics`, `emailremetente`, `emaildestinatario`, `data_envio`) VALUES
+(1, 'fdgfd', 'gfdgfdg', 1, '09/09/2018', 'hencanacao@pp.oo', 'hencanacao@pp.oo', '9 Setembro 2018, 20:00:19'),
+(2, 'dsfdsf', 'fdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsd<div>fdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsd<br></div><div>fdsfdsfsd<br></div><div>fdsfdsfsdfdsfdsfsdfdsfdsfsd<br></div><div>fdsfdsfsdfdsfdsfsdfdsfdsfsdfdsfdsfsd<br></div>', 1, '09/09/2018', 'hencanacao@pp.oo', 'hencanacao@pp.oo', '9 Setembro 2018, 20:06:19');
 
 -- --------------------------------------------------------
 
@@ -140,17 +135,13 @@ INSERT INTO `trabalhadores` (`idtrabalhador`, `nome`, `apelido`, `nif`, `nib`, `
 (1, 'Hugo', 'Mendes', 123456789, 321654987, 258741369, 'Administrador', 'Rua Mendes', 'hencanacao@pp.oo', '1234', 'hugo', 1),
 (2, 'goncalo', 'lavrador', 2147483647, 31231231, 312312331, 'Finanças', 'ytuytuytuyt', 'ads@gmail.com', 'lavrador', 'goncalo', 0),
 (3, 'Maria', 'Albertina', 214743647, 13213213, 132123121, 'Operador', 'asdas', 'dasd@fds.com', 'ewe', 'mari', 0),
-(22, 'maria', 'dsadas', 3123, 1321, 312, 'Finanças', 'adsasd', 'ads@gmail.com', 'asda', 'asd', 0);
+(22, 'maria', 'dsadas', 3123, 1321, 312, 'Finanças', 'adsasd', 'ads@gmail.com', 'asda', 'asd', 0),
+(23, 'dsadasdgt7', 'bsdhfdsfh', 5, 4, 2, 'Operador', 'jnfdsjnfjsdnj', 'mdsf@gmail.com', 'djsay', 'hsf', 0),
+(24, 'dasdas', 'dasdas', 85678, 121399, 12399, 'Operador', 'dasdasd', 'asdad@gmail.com', 'ads', 'dasd', 0);
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`idadmin`);
 
 --
 -- Indexes for table `mes`
@@ -181,12 +172,6 @@ ALTER TABLE `trabalhadores`
 --
 
 --
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `idadmin` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `mes`
 --
 ALTER TABLE `mes`
@@ -196,7 +181,7 @@ ALTER TABLE `mes`
 -- AUTO_INCREMENT for table `notificacoes`
 --
 ALTER TABLE `notificacoes`
-  MODIFY `idnotifics` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idnotifics` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `salario`
@@ -208,7 +193,7 @@ ALTER TABLE `salario`
 -- AUTO_INCREMENT for table `trabalhadores`
 --
 ALTER TABLE `trabalhadores`
-  MODIFY `idtrabalhador` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `idtrabalhador` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -37,7 +37,7 @@
                       echo '<td style="padding: 12px 20px;"><a href="admin.php?an=10&ann1=1&idsalario='.$row["idsalario"].'"><button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="zmdi zmdi-delete"></i></button></a></td>';
                       echo '</tr>';
                     }
-                    if(empty($row=mysqli_fetch_assoc($dados))){
+                    if(mysqli_num_rows($dados) == 0){
                       echo "NÃO EXISTEM SALARIOS";
                     }
               ?>
