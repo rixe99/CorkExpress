@@ -11,7 +11,7 @@
                       <label for="text-input" class=" form-control-label">Nome:</label>
                   </div>
                   <div class="col-12 col-md-9">
-                      <input type="text" id="text-input" name="nome" placeholder="Nome" class="form-control">
+                      <input type="text" id="text-input" name="nome" placeholder="Nome" class="form-control" maxlength="15" required>
                   </div>
               </div>
               <div class="row form-group">
@@ -19,7 +19,7 @@
                         <label for="text-input" class=" form-control-label">Apelido:</label>
                     </div>
                     <div class="col-12 col-md-9">
-                        <input type="text" id="text-input" name="apelido" placeholder="Apelido" class="form-control">
+                        <input type="text" id="text-input" name="apelido" placeholder="Apelido" class="form-control" maxlength="15" required>
                     </div>
                 </div>
                 <div class="row form-group">
@@ -27,7 +27,7 @@
                         <label for="email-input" class=" form-control-label">Email:</label>
                     </div>
                     <div class="col-12 col-md-9">
-                        <input type="email" id="email-input" name="email" placeholder="Enter Email" class="form-control">
+                        <input type="email" id="email-input" name="email" placeholder="Enter Email" class="form-control" required>
                     </div>
                 </div>
                   <div class="row form-group">
@@ -36,7 +36,6 @@
                       </div>
                     <div class="col-12 col-md-9">
                         <select name="categoria" id="select" class="form-control">
-                            <option value="0">Please select</option>
                             <option value="Administrador" <?php if(isset($_POST['categoria'])){$categoria=$_POST['categoria'];}  ?>>Administrador</option>
                         </select>
                     </div>
@@ -46,7 +45,7 @@
                             <label for="text-input" class=" form-control-label">Username:</label>
                         </div>
                         <div class="col-12 col-md-9">
-                            <input type="text" id="text-input" name="username" placeholder="Username" class="form-control">
+                            <input type="text" id="text-input" name="username" placeholder="Username" class="form-control" maxlength="15" required>
                         </div>
                     </div>
                     <div class="row form-group">
@@ -54,7 +53,7 @@
                               <label for="text-input" class=" form-control-label">Password:</label>
                           </div>
                           <div class="col-12 col-md-9">
-                              <input type="text" id="text-input" name="password" placeholder="Password" class="form-control">
+                              <input type="text" id="text-input" name="password" placeholder="Password" class="form-control" maxlength="15" required>
                           </div>
                       </div>
           <div class="card-footer">
@@ -66,6 +65,15 @@
               </button>
           </div>
         </form>
+        <script type="text/javascript">
+            function enforce_maxlength(event) {
+              var t = event.target;
+              if (t.hasAttribute('maxlength')) {
+              t.value = t.value.slice(0, t.getAttribute('maxlength'));
+                }
+              }
+              document.body.addEventListener('input', enforce_maxlength);
+        </script>
         <?php
         if(isset($_POST["insere"])){
           include '../../connect/conn.php';

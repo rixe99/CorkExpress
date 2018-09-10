@@ -11,7 +11,7 @@
                       <label for="text-input" class=" form-control-label">Nome:</label>
                   </div>
                   <div class="col-12 col-md-9">
-                      <input type="text" id="text-input" name="nome" placeholder="Nome" class="form-control" required>
+                      <input type="text" id="text-input" name="nome" placeholder="Nome" class="form-control" required maxlength="15">
                   </div>
               </div>
               <div class="row form-group">
@@ -19,7 +19,7 @@
                         <label for="text-input" class=" form-control-label">Apelido:</label>
                     </div>
                     <div class="col-12 col-md-9">
-                        <input type="text" id="text-input" name="apelido" placeholder="Apelido" class="form-control" required>
+                        <input type="text" id="text-input" name="apelido" placeholder="Apelido" class="form-control" required maxlength="15">
                     </div>
                 </div>
                 <div class="row form-group">
@@ -43,7 +43,7 @@
                           <label for="text-input" class=" form-control-label">Niss:</label>
                       </div>
                       <div class="col-12 col-md-9">
-                          <input type="number" id="text-input" name="niss" placeholder="Niss" class="form-control" required>
+                          <input type="number" id="text-input" name="niss" placeholder="Niss" class="form-control" min="0" max="9999999999" maxlength="10" required/>
                       </div>
                   </div>
                   <div class="row form-group">
@@ -51,7 +51,7 @@
                             <label for="text-input" class=" form-control-label">Nib:</label>
                         </div>
                         <div class="col-12 col-md-9">
-                            <input type="number" id="text-input" name="nib" placeholder="Nib" class="form-control" required>
+                            <input type="number" id="text-input" name="nib" placeholder="Nib" class="form-control" min="0" max="9999999999" maxlength="10" required/>
                         </div>
                     </div>
                     <div class="row form-group">
@@ -59,7 +59,7 @@
                               <label for="text-input" class=" form-control-label">Nif:</label>
                           </div>
                           <div class="col-12 col-md-9">
-                              <input type="number" id="text-input" name="nif" placeholder="Nif" class="form-control" required>
+                              <input type="number" id="text-input" name="nif" placeholder="Nif" class="form-control" min="0" max="9999999999" maxlength="10" required/>
                           </div>
                       </div>
                   <div class="row form-group">
@@ -68,7 +68,6 @@
                       </div>
                     <div class="col-12 col-md-9">
                         <select name="categoria" id="select" class="form-control">
-                            <option value="0">Please select</option>
                             <option value="Finanças">Finanças</option>
                             <option value="Operador">Operador</option>
                             <option value="I.T" >I.T</option>
@@ -84,7 +83,7 @@
                             <label for="text-input" class=" form-control-label">Username:</label>
                         </div>
                         <div class="col-12 col-md-9">
-                            <input type="text" id="text-input" name="username" placeholder="Username" class="form-control" required>
+                            <input type="text" id="text-input" name="username" placeholder="Username" class="form-control" required maxlength="15">
                         </div>
                     </div>
                     <div class="row form-group">
@@ -92,7 +91,7 @@
                               <label for="text-input" class=" form-control-label">Password:</label>
                           </div>
                           <div class="col-12 col-md-9">
-                              <input type="text" id="text-input" name="password" placeholder="Password" class="form-control" required>
+                              <input type="text" id="text-input" name="password" placeholder="Password" class="form-control" required maxlength="15">
                           </div>
                       </div>
           <div class="card-footer">
@@ -104,6 +103,15 @@
               </button>
           </div>
         </form>
+        <script type="text/javascript">
+            function enforce_maxlength(event) {
+              var t = event.target;
+              if (t.hasAttribute('maxlength')) {
+              t.value = t.value.slice(0, t.getAttribute('maxlength'));
+                }
+              }
+              document.body.addEventListener('input', enforce_maxlength);
+        </script>
         <?php
           if(isset($_POST["insere"])){
             if ($_POST["categoria"] == "0"){

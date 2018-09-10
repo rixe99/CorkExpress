@@ -16,7 +16,7 @@
                       <label for="text-input" class=" form-control-label">Nome:</label>
                   </div>
                   <div class="col-12 col-md-9">
-                      <input type="text" id="text-input" name="nome" value ="<?php echo ''.$dados["nome"].''; ?>" placeholder="Nome" class="form-control">
+                      <input type="text" id="text-input" name="nome" value ="<?php echo ''.$dados["nome"].''; ?>" placeholder="Nome" class="form-control" maxlength="15" required>
                   </div>
               </div>
               <div class="row form-group">
@@ -24,7 +24,7 @@
                         <label for="text-input" class=" form-control-label">Apelido:</label>
                     </div>
                     <div class="col-12 col-md-9">
-                        <input type="text" id="text-input" name="apelido" value ="<?php echo ''.$dados["apelido"].''; ?>" placeholder="Apelido" class="form-control">
+                        <input type="text" id="text-input" name="apelido" value ="<?php echo ''.$dados["apelido"].''; ?>" placeholder="Apelido" class="form-control" maxlength="15" required>
                     </div>
                 </div>
                 <div class="row form-group">
@@ -50,7 +50,7 @@
                             <label for="text-input" class=" form-control-label">Username:</label>
                         </div>
                         <div class="col-12 col-md-9">
-                            <input type="text" id="text-input" name="username" value ="<?php echo ''.$dados["username"].''; ?>" placeholder="Username" class="form-control">
+                            <input type="text" id="text-input" name="username" value ="<?php echo ''.$dados["username"].''; ?>" placeholder="Username" class="form-control" maxlength="15" required>
                         </div>
                     </div>
                     <div class="row form-group">
@@ -58,7 +58,7 @@
                               <label for="text-input" class=" form-control-label">Password:</label>
                           </div>
                           <div class="col-12 col-md-9">
-                              <input type="text" id="text-input" name="password" value ="<?php echo ''.$dados["password"].''; ?>" placeholder="Password" class="form-control">
+                              <input type="text" id="text-input" name="password" value ="<?php echo ''.$dados["password"].''; ?>" placeholder="Password" class="form-control" maxlength="15" required>
                           </div>
                       </div>
           <div class="card-footer">

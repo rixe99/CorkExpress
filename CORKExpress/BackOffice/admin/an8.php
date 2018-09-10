@@ -8,12 +8,12 @@
 <br>
   <div class="row">
     <div class="col-lg-9" style="max-width:30%;">
-        <div class="table-responsive table--no-card m-b-30"style="overflow-x: hidden; width:512px;">
+        <div class="table-responsive table--no-card m-b-30"style="overflow-x: hidden; width:550px;">
             <table class="table table-borderless table-striped table-earning">
                 <thead style="display:block;">
                     <tr>
-                        <th style="width:150px">Nome</th>
-                        <th style="width:150px">Apelido</th>
+                        <th style="width:180px">Nome</th>
+                        <th style="width:180px">Apelido</th>
                         <th style="width:150px">Nif</th>
 
                     </tr>

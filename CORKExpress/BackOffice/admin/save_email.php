@@ -21,12 +21,13 @@ $antes_do_mes = date("j ");
 $today.=''.$antes_do_mes.$messes["mes"].$depois_do_mes;
 
 $dados = mysqli_fetch_assoc(mysqli_query($conn,"SELECT email FROM trabalhadores  WHERE idtrabalhador='$_SESSION[idtrabalhador]'"));
+$dado = mysqli_fetch_assoc(mysqli_query($conn,"SELECT email FROM trabalhadores  WHERE email = '$toData'"));
+
 $hoData=$dados['email'];
-if(!$dados){
+if(!$dado){
     echo'Não existe o email do destinatario';
 }else {
   mysqli_query($conn, "INSERT INTO notificacoes (assunto,texto,estado,emailremetente,emaildestinatario,data_envio,hours_notifics) VALUES ('$subjData','$textData',0,'$hoData','$toData','$today','$hours')");
   echo'Sucesso';
 }
-
 ?>

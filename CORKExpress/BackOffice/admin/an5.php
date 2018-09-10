@@ -8,11 +8,11 @@
 <br>
   <div class="row">
     <div class="col-lg-9" style="max-width:30%;">
-        <div class="table-responsive table--no-card m-b-30"style="overflow-x: hidden; width:450px">
+        <div class="table-responsive table--no-card m-b-30"style="overflow-x: hidden; width:500px">
             <table class="table table-borderless table-striped table-earning">
                 <thead style="display:block;">
                     <tr>
-                        <th style="width:150px">Nome</th>
+                        <th style="width:180px">Nome</th>
                         <th style="width:150px">Apelido</th>
                         <th style="width:150px">Nif</th>
                     </tr>
@@ -30,8 +30,6 @@
                         echo '<td>'. $row['nome']. '</td>';
                         echo '<td>'. $row['apelido']. '</td>';
                         echo '<td>'. $row['nif']. '</td>';
-                        echo '<td style="padding: 12px 20px;"><a href="admin.php?an=8&ann=1&niftrabalhador='.$row["nif"].'"><button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="zmdi zmdi-delete"></i></button></a></td>';
-                        echo '</tr>';
                       }
                     }else {
                       $first_letter = substr($_POST['search'], 0, 1);
@@ -42,7 +40,6 @@
                           echo '<td>'. $row['nome']. '</td>';
                           echo '<td>'. $row['apelido']. '</td>';
                           echo '<td>'. $row['nif']. '</td>';
-                          echo '<td style="padding: 12px 20px;"><a href="admin.php?an=8&ann=1&niftrabalhador='.$row["nif"].'"><button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="zmdi zmdi-delete"></i></button></a></td>';
                           echo '</tr>';
                         }
                     }
@@ -93,7 +90,7 @@
                               <label for="text-input" class=" form-control-label">Ano:</label>
                           </div>
                           <div class="col-12 col-md-2">
-                              <input type="number" id="text-input" name="ano" placeholder="Ano" class="form-control">
+                              <input type="number" id="text-input" name="ano" placeholder="Ano" class="form-control" value="1990" min="1990" max="2022" maxlength="4" required>
                           </div>
                       </div>
                         <div class="row form-group">
@@ -137,7 +134,7 @@
                                 <label for="text-input" class=" form-control-label">Ano:</label>
                             </div>
                             <div class="col-12 col-md-2">
-                                <input type="number" id="text-input" name="ano" placeholder="Ano" class="form-control">
+                                <input type="number" id="text-input" name="ano" placeholder="Ano" class="form-control" value="1990" min="1990" max="2022" maxlength="4" required>
                             </div>
                         </div>
                           <div class="row form-group">
@@ -180,7 +177,7 @@
                                   <label for="text-input" class=" form-control-label">Ano:</label>
                               </div>
                               <div class="col-12 col-md-2">
-                                  <input type="number" id="text-input" name="ano" placeholder="Ano" class="form-control">
+                                  <input type="number" id="text-input" name="ano" placeholder="Ano" class="form-control" value="1990" min="1990" max="2022" maxlength="4" required>
                               </div>
                           </div>
                             <div class="row form-group">
@@ -209,7 +206,7 @@
                             <label for="text-input" class=" form-control-label">Quantos dias que trabalhou:</label>
                         </div>
                         <div class="col-12 col-md-2">
-                            <input type="number" id="text-input" name="dias" placeholder="Dias" class="form-control">
+                            <input type="number" id="text-input" name="dias" placeholder="Dias" class="form-control" value="1" min="1" max="31" maxlength="2" required>
                           </div>
                     </div>
                 <div class="row form-group">
@@ -232,7 +229,7 @@
                               <label for="text-input" class=" form-control-label">Nif:</label>
                           </div>
                           <div class="col-12 col-md-6">
-                              <input type="number" id="text-input" name="nif" placeholder="Nif" class="form-control">
+                              <input type="number" id="text-input" name="nif" placeholder="Nif" class="form-control"  min="0" max="9999999999" maxlength="10" required>
                           </div>
                       </div>
                       <div class="row form-group">
@@ -240,7 +237,7 @@
                                 <label for="text-input" class=" form-control-label">Salario:</label>
                             </div>
                             <div class="col-12 col-md-4">
-                                <input type="number" id="text-input" name="salario" placeholder="Salario" class="form-control">
+                                <input type="number" id="text-input" name="salario" placeholder="Salario" class="form-control" min="0" maxlength="5" required>
                             </div>
                         </div>
             <div class="card-footer">
@@ -252,6 +249,15 @@
                 </button>
             </div>
         </form>
+        <script type="text/javascript">
+            function enforce_maxlength(event) {
+              var t = event.target;
+              if (t.hasAttribute('maxlength')) {
+              t.value = t.value.slice(0, t.getAttribute('maxlength'));
+                }
+              }
+              document.body.addEventListener('input', enforce_maxlength);
+        </script>
         <script>
           function displayVals() {
             singleValues = "<?php echo $_GET['myvariable'] ?>";
