@@ -47,6 +47,7 @@
                           echo '</tr>';
                         }
                     }
+                      include '../../connect/deconn.php';
                   }
                    ?>
                 </tbody>

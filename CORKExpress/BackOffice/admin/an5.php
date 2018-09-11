@@ -43,6 +43,7 @@
                           echo '</tr>';
                         }
                     }
+                    include '../../connect/deconn.php';
                   }
                    ?>
                 </tbody>
@@ -482,6 +483,7 @@
         else {
           echo "nif errado";
         }
+        include '../../connect/deconn.php';
       }
        ?>
     </div>

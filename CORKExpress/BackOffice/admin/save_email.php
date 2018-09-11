@@ -30,4 +30,5 @@ if(!$dado){
   mysqli_query($conn, "INSERT INTO notificacoes (assunto,texto,estado,emailremetente,emaildestinatario,data_envio,hours_notifics) VALUES ('$subjData','$textData',0,'$hoData','$toData','$today','$hours')");
   echo'Sucesso';
 }
+include '../../connect/deconn.php';
 ?>

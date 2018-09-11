@@ -75,8 +75,8 @@
                                   echo '<td style="padding: 12px 20px;">TODOS</td>';
                                 //  echo '<td style="padding: 12px 20px;">'.$row['soma']. '</td>';
                                 //  echo '<td style="padding: 12px 20px;">'.ceil($row['soma']).'</td>';
-                                //  echo '<td style="padding: 12px 20px;">'.round($row['soma'],2,PHP_ROUND_HALF_UP).'</td>';
-                                echo '<td style="padding: 12px 20px;">'.round($row['soma']).'</td>';
+                                  echo '<td style="padding: 12px 20px;">'.round($row['soma'],2,PHP_ROUND_HALF_UP).'</td>';
+                                //echo '<td style="padding: 12px 20px;">'.round($row['soma']).'</td>';
                                   echo '</tr>';
                                 }
                             }
@@ -92,6 +92,7 @@
                                 }
                             }
                         }
+                        include '../../connect/deconn.php';
                     ?>
                   </tbody>
               </table>

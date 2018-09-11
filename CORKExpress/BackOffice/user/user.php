@@ -102,7 +102,7 @@ validar();
                                               <img src="images/icon/avatar-01.jpg" alt="John Doe" />
                                           </div>
                                           <div class="content">
-                                              <a class="js-acc-btn" href="#"><?php   include '../../connect/conn.php'; $dados =mysqli_query($conn,"SELECT nome, apelido FROM trabalhadores  WHERE idtrabalhador=$_SESSION[idtrabalhador] "); $row=mysqli_fetch_assoc($dados);  echo '<span>'.$row['nome'].' '.$row['apelido']. '</span>';  ?></a>
+                                              <a class="js-acc-btn" href="#"><?php   include '../../connect/conn.php'; $dados =mysqli_query($conn,"SELECT nome, apelido FROM trabalhadores  WHERE idtrabalhador=$_SESSION[idtrabalhador] "); $row=mysqli_fetch_assoc($dados);  echo '<span>'.$row['nome'].' '.$row['apelido']. '</span>'; include '../../connect/deconn.php'; ?></a>
                                           </div>
                                           <div class="account-dropdown js-dropdown">
                                               <div class="info clearfix" style="height:100px;">
@@ -113,9 +113,9 @@ validar();
                                                   </div>
                                                   <div class="content">
                                                       <h5 class="name">
-                                                          <a href="#"><?php   include '../../connect/conn.php'; $dados =mysqli_query($conn,"SELECT nome, apelido FROM trabalhadores  WHERE idtrabalhador=$_SESSION[idtrabalhador] "); $row=mysqli_fetch_assoc($dados);  echo '<span>'.$row['nome'].' '.$row['apelido']. '</span>';  ?></a>
+                                                          <a href="#"><?php   include '../../connect/conn.php'; $dados =mysqli_query($conn,"SELECT nome, apelido FROM trabalhadores  WHERE idtrabalhador=$_SESSION[idtrabalhador] "); $row=mysqli_fetch_assoc($dados);  echo '<span>'.$row['nome'].' '.$row['apelido']. '</span>'; include '../../connect/deconn.php'; ?></a>
                                                       </h5>
-                                                      <span class="email"><?php   include '../../connect/conn.php'; $dados =mysqli_query($conn,"SELECT email FROM trabalhadores  WHERE idtrabalhador=$_SESSION[idtrabalhador] "); $row=mysqli_fetch_assoc($dados);  echo $row['email']; ?></span>
+                                                      <span class="email"><?php   include '../../connect/conn.php'; $dados =mysqli_query($conn,"SELECT email FROM trabalhadores  WHERE idtrabalhador=$_SESSION[idtrabalhador] "); $row=mysqli_fetch_assoc($dados);  echo $row['email']; include '../../connect/deconn.php'; ?></span>
                                                   </div>
                                               </div>
                                               <div class="account-dropdown__footer">

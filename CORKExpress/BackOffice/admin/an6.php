@@ -9,6 +9,7 @@
             include '../../connect/conn.php';
               @$editar = $_REQUEST["editar"];
                 $dados = mysqli_fetch_array(mysqli_query($conn, "SELECT nome, apelido, nif, nib, niss ,categoria, morada, email, password, username  FROM trabalhadores WHERE  idtrabalhador ='$editar'"));
+                include '../../connect/deconn.php';
               ?>
               <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
               <div class="row form-group">

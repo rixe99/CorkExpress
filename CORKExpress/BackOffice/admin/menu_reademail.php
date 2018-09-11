@@ -14,4 +14,5 @@ $output .= '<div class="mailbox-read-info">
 <div class="form-control" contentEditable style="height: 500px; overflow-y: scroll;">'.$dados["texto"].'</div>';
 
 echo $output;
+include '../../connect/deconn.php';
 ?>

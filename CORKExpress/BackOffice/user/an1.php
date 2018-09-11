@@ -35,7 +35,7 @@
                           echo '<td style="padding: 12px 20px;"><a href="user.php?editar='.$row["idtrabalhador"].'&an=3"><button>Editar</button></a></td>';
                           echo '</tr>';
                         }
-
+                        include '../../connect/deconn.php';
                   ?>
                 </tbody>
             </table>

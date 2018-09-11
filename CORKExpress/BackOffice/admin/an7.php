@@ -9,6 +9,7 @@
             include '../../connect/conn.php';
               @$editar = $_REQUEST["editar"];
                 $dados = mysqli_fetch_array(mysqli_query($conn, "SELECT nome, apelido, categoria, email, password, username  FROM trabalhadores WHERE  idtrabalhador ='$editar'"));
+                include '../../connect/deconn.php';
               ?>
           <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
               <div class="row form-group">
@@ -75,11 +76,13 @@
           include '../../connect/conn.php';
           $user=mysqli_fetch_array(mysqli_query($conn,"SELECT username FROM trabalhadores WHERE username='$_POST[username]' AND idtrabalhador!='$editar' " ));
           $email=mysqli_fetch_array(mysqli_query($conn,"SELECT email FROM trabalhadores WHERE email='$_POST[email]' AND idtrabalhador!='$editar' " ));
+          include '../../connect/deconn.php';
           if(!$user && !$email){
             include '../../connect/conn.php';
             mysqli_query($conn,"UPDATE trabalhadores SET nome='$_POST[nome]', apelido='$_POST[apelido]', email='$_POST[email]', categoria='$_POST[categoria]', username='$_POST[username]', password='$_POST[password]' WHERE idtrabalhador='$editar'");
             echo '<meta http-equiv="refresh"
                 content="0;url=admin.php">';
+            include '../../connect/deconn.php';
           }
           else {
             if($user){

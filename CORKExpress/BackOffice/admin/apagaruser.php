@@ -24,9 +24,9 @@
       </div>
     </form>
     <?php
+        include '../../connect/conn.php';
         if (isset($_POST["sim"])){
           if($_POST["password"] == "abc.123"){
-            include '../../connect/conn.php';
             $niftrabalhador = $_REQUEST["niftrabalhador"];
             mysqli_query($conn, "DELETE FROM trabalhadores WHERE nif = '$niftrabalhador'");
             mysqli_query($conn, "DELETE FROM salario WHERE nif = '$niftrabalhador'");
@@ -38,6 +38,7 @@
         if(isset($_POST["nao"])){
           echo '<meta http-equiv="refresh" content="0;url=admin.php?an=8">';
         }
+        include '../../connect/deconn.php';
      ?>
   </div>
   <div class="box5"></div>

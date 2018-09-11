@@ -31,7 +31,7 @@
                       echo '<td style="padding: 12px 20px;">'. $row['salariobruto']. '</td>';
                       echo '<td style="padding: 12px 20px;">'. $row['salarioniss']. '</td>';
                       echo '<td style="padding: 12px 20px;">'. $row['salarioirs']. '</td>';
-                      echo '<td style="padding: 12px 20px;">'. $row['salariofinal']. '</td>';
+                      echo '<td style="padding: 12px 20px;">'.round($row['salariofinal'],2,PHP_ROUND_HALF_UP).'</td>';
                       echo '<td style="padding: 12px 20px;">'. $row['turno']. '</td>';
                       echo '<td style="padding: 12px 20px;">'. $row['tipo']. '</td>';
                       echo '<td style="padding: 12px 20px;"><a href="admin.php?an=10&ann1=1&idsalario='.$row["idsalario"].'"><button class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="zmdi zmdi-delete"></i></button></a></td>';
@@ -40,6 +40,7 @@
                     if(mysqli_num_rows($dados) == 0){
                       echo "NÃO EXISTEM SALARIOS";
                     }
+                    include '../../connect/deconn.php';
               ?>
             </tbody>
         </table>

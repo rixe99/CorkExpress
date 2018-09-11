@@ -32,13 +32,14 @@
                         echo '<td style="padding: 12px 20px;">'. $row['salariobruto']. '</td>';
                         echo '<td style="padding: 12px 20px;">'. $row['salarioniss']. '</td>';
                         echo '<td style="padding: 12px 20px;">'. $row['salarioirs']. '</td>';
-                        echo '<td style="padding: 12px 20px;">'. $row['salariofinal']. '</td>';
+                        echo '<td style="padding: 12px 20px;">'.round($row['salariofinal'],2,PHP_ROUND_HALF_UP).'</td>';
                         echo '<td style="padding: 12px 20px;">'. $row['turno']. '</td>';
                         echo '<td style="padding: 12px 20px;">'. $row['tipo']. '</td>';
                         echo '<td style="padding: 12px 20px;">'. $row['idsalario']. '</td>';
                         echo '<td style="padding: 12px 20px;"><a href="user.php?an=4&recibo='.$row["idsalario"].'"><button>Recibo</button></a></td>';
                         echo '</tr>';
                       }
+                      include '../../connect/deconn.php';
                 ?>
               </tbody>
           </table>

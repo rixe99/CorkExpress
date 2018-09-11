@@ -3,7 +3,7 @@
   <div class="box2"></div>
   <div class="box3"></div>
   <div class="box4">
-    <div class="textv3"><strong>Quere apagar o salario <?php include '../../connect/conn.php'; $idsalario = $_REQUEST["idsalario"]; $dado=mysqli_fetch_array(mysqli_query($conn,"SELECT nif FROM salario WHERE idsalario = '$idsalario'" )); echo'<br>   '.$dado["nif"]; ?> ?</strong></div>
+    <div class="textv3"><strong>Quere apagar o salario <?php include '../../connect/conn.php'; $idsalario = $_REQUEST["idsalario"]; $dado=mysqli_fetch_array(mysqli_query($conn,"SELECT nif FROM salario WHERE idsalario = '$idsalario'" )); echo'<br>   '.$dado["nif"];   include '../../connect/deconn.php'; ?> </strong></div>
     <form method="post">
       <div class="row form-group maingrup">
           <div class="col col-md-3">
@@ -24,9 +24,9 @@
       </div>
     </form>
     <?php
+        include '../../connect/conn.php';
         if (isset($_POST["sim"])){
           if($_POST["password"] == "abc.123"){
-            include '../../connect/conn.php';
           //  $niftrabalhador = $_REQUEST["niftrabalhador"];
             mysqli_query($conn, "DELETE FROM salario WHERE idsalario = '$idsalario'");
             echo '<meta http-equiv="refresh" content="0;url=admin.php?an=10">';
@@ -37,6 +37,7 @@
         if(isset($_POST["nao"])){
           echo '<meta http-equiv="refresh" content="0;url=admin.php?an=8">';
         }
+        include '../../connect/deconn.php';
      ?>
   </div>
   <div class="box5"></div>

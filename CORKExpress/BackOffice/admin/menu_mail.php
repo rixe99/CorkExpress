@@ -215,6 +215,7 @@ $(document).ready(function(){
             $dado = mysqli_query($conn,"SELECT notificacoes.idnotifics, trabalhadores.nome, trabalhadores.apelido, notificacoes.texto, notificacoes.assunto  FROM trabalhadores inner JOIN notificacoes ON trabalhadores.email = notificacoes.emaildestinatario WHERE estado = 0 AND emailremetente != '$dados[email]'");
             $num_rows = mysqli_num_rows($dado);
             echo $num_rows;
+            include '../../connect/deconn.php';
            ?></span></a></li>
         <li id="5437" class="" style="padding: 4px 10px;"><a href="#"><i class="fa fa-send-o"></i>Enviado&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         </a></li>
