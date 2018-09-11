@@ -182,7 +182,7 @@ $(document).ready(function(){
             success: function(stre){
             alert(stre);
             if(stre != "Não existe o email do destinatario"){
-              window.location.href = "admin.php?an=11";
+              window.location.href = "user.php?an=11";
             }
           }
           });
