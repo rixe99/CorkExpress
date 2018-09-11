@@ -37,7 +37,10 @@ validar();
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link href="css/theme.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="csS.css" type="text/css">
+    <!-- Main CSS-->
+    <link href="css/theme.css" type="text/css" rel="stylesheet" media="all">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
 </head>
 
@@ -74,7 +77,7 @@ validar();
                         </ul>
                     </li>
                         <li>
-                            <a href="#"><i class="zmdi zmdi-email"></i>Email</a>
+                            <a href="?an=11"><i class="zmdi zmdi-email"></i>Email</a>
                         </li>
                     </ul>
                 </nav>
@@ -89,12 +92,8 @@ validar();
                 <div class="section__content section__content--p30">
                     <div class="container-fluid" >
                         <div class="header-wrap">
+                          <div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</div>
                             <div class="header-button">
-                              <div>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                                &emsp;&emsp;&emsp;&emsp;</div>
                               <div class="header-button">
                                   <div class="account-wrap">
                                       <div class="account-item clearfix js-item-menu">
@@ -135,7 +134,7 @@ validar();
 
             <!-- MAIN CONTENT-->
             <div class="main-content">
-                <div class="section__content section__content--p30">
+                <div class="section__content section__content--p30" style="height:1000px;">
                   <?php
                   @$an = $_REQUEST["an"];
                    switch ($an) {
@@ -154,6 +153,9 @@ validar();
                      case '5':
                        include 'an5.php';
                        break;
+                    case '11':
+                      include 'menu_mail.php';
+                      break;
                    }
                    ?>
                 </div>
