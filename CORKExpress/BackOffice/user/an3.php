@@ -33,7 +33,7 @@
                           <label for="text-input" class=" form-control-label">Morada:</label>
                       </div>
                       <div class="col-12 col-md-9">
-                          <input type="text" id="text-input" name="morada" value ="<?php echo ''.$dados["morada"].''; ?>" placeholder="Morada" class="form-control">
+                          <input type="text" style="text-align:center;" id="text-input" name="morada" value ="<?php echo ''.$dados["morada"].''; ?>" placeholder="Morada" class="form-control">
                       </div>
                   </div>
                 <div class="row form-group">
@@ -41,7 +41,7 @@
                         <label for="email-input" class=" form-control-label">Email:</label>
                     </div>
                     <div class="col-12 col-md-9">
-                        <input type="email" id="email-input" name="email" value ="<?php echo ''.$dados["email"].''; ?>" placeholder="Enter Email" class="form-control">
+                        <input type="email" style="text-align:center;" id="email-input" name="email" value ="<?php echo ''.$dados["email"].''; ?>" placeholder="Enter Email" class="form-control">
                     </div>
                 </div>
                 <div class="row form-group">
@@ -81,7 +81,7 @@
                             <label for="text-input" class=" form-control-label">Username:</label>
                         </div>
                         <div class="col-12 col-md-9">
-                            <input type="text" id="text-input" name="username" value ="<?php echo ''.$dados["username"].''; ?>" placeholder="Username" class="form-control">
+                            <input type="text" style="text-align:center;" id="text-input" name="username" value ="<?php echo ''.$dados["username"].''; ?>" placeholder="Username" class="form-control">
                         </div>
                     </div>
                     <div class="row form-group">
@@ -89,7 +89,7 @@
                               <label for="text-input" class=" form-control-label">Password:</label>
                           </div>
                           <div class="col-12 col-md-9">
-                              <input type="text" id="text-input" name="password" value ="<?php echo ''.$dados["password"].''; ?>" placeholder="Password" class="form-control">
+                              <input type="text" style="text-align:center;" id="text-input" name="password" value ="<?php echo ''.$dados["password"].''; ?>" placeholder="Password" class="form-control">
                           </div>
                       </div>
           <div class="card-footer">
