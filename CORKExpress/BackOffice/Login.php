@@ -8,7 +8,7 @@ confirma();
 <html lang="en">
 <head>
 	<title>CORKExpress - Login</title>
-	<link rel="icon" type="image/gif/png" href="images/icon/icon_cork.png">
+	<link rel="icon" type="image/gif/png" href="images/icons/icon_cork.png">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
