@@ -12,7 +12,7 @@ session_start();
       $sub=substr($rows['texto'], 0, 40);
       $output .= '
       <tr>
-        <td class="mailbox-star"><a href="#" '; if($tipo==0){$output .='onclick="deletet('.$rows['idnotifics'].')"';}$output .='><i class="fa fa-trash-o text-yellow"></i></a></td>
+        <td class="mailbox-star"><a href="#" ><i class="fa-lemon-o text-yellow"></i></a></td>
         <td class="mailbox-name"><a href="#" onclick="entrar('.$rows['idnotifics'].',1)">&nbsp;'.$rows['nome'].'&nbsp;'.$rows['apelido'].'</a></td>
         <td class="mailbox-subject"><b>&nbsp;'.$rows['assunto'].'</b> - '.$sub.'...</td>
         <td class="mailbox-date">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$rows['hours_notifics'].'</td>
